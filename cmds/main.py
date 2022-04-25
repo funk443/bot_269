@@ -20,6 +20,14 @@ class main (cog_extension):
     embed.set_footer (text = "support fsf")
     await ctx.send (embed=embed)
 
+  @commands.command ()
+  async def sayd (self, ctx, *, msg):
+    await ctx.message.delete ()
+    await ctx.send (msg)
+
+  @commands.command ()
+  async def purge (self, ctx, i:int):
+    await ctx.channel.purge (limit = i + 1)
 
 def setup (bot):
   bot.add_cog (main (bot))
