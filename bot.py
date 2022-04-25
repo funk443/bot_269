@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import json
 import random
+import os
 
 with open ("config.json", mode = "r", encoding = "utf8") as conf:
   conf_data = json.load (conf)
@@ -15,27 +16,25 @@ bot = commands.Bot (command_prefix = "a269 ", intents = intents)
 async def on_ready ():
   print ("Hello, World!")
 
-@bot.event
-async def on_member_join (member):
-  print (f"{member} joined!")
-  channel = bot.get_channel (int(conf_data["general"]))
-  await channel.send (f"{member} joined!")
-  
-@bot.event
-async def on_member_remove (member):
-  print (f"{member} left!")
-  channel = bot.get_channel (int(conf_data["general"]))
-  await channel.send (f"{member} left!")
+@bot.command ()
+async def load (ctx, extension):
+  bot.load_extension (f"cmds.{extension}")
+  await ctx.send (f"{extension} Loaded")
 
 @bot.command ()
-async def ping (ctx):
-  await ctx.send (f"{round (bot.latency * 1000)} ms")
+async def unload (ctx, extension):
+  bot.unload_extension (f"cmds.{extension}")
+  await ctx.send (f"{extension} Unloaded")
 
 @bot.command ()
-async def gnu頭 (ctx):
-  random_pic = random.choice (conf_data["pic"])
-  pic = discord.File (random_pic)
-  await ctx.send (file = pic)
+async def reload (ctx, extension):
+  bot.reload_extension (f"cmds.{extension}")
+  await ctx.send (f"{extension} Reloaded")
 
-bot.run (conf_data["TOKEN"])
+for filename in os.listdir ("./cmds"):
+  if (filename.endswith (".py")):
+    bot.load_extension(f"cmds.{filename[:-3]}")
+    
+if __name__ == "__main__":
+  bot.run (conf_data["TOKEN"])
 
