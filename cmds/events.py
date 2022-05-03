@@ -35,11 +35,12 @@ class events (cog_ext):
       return
   
     word = random.choice (conf["kai"])
-    await before.channel.send (f"{before.author.mention}{word}")
+    await before.reply (word)
 
   @commands.Cog.listener ()
   async def on_command_error (self, ctx, error):
-    await ctx.send (random.choice (conf["wtf"]))
+    word = random.choice (conf["wtf"])
+    await ctx.reply (word)
 
 def setup (bot):
   bot.add_cog (events (bot))
