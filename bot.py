@@ -16,7 +16,7 @@ f = open ("config.json", "r")
 conf = json.load (f)
 f.close ()
 
-bot = commands.Bot (command_prefix = conf["prefix"], intents = intents, activity = activity)
+bot = commands.Bot (command_prefix = conf["prefix"], intents = intents, activity = activity, help_command = None)
 
 @bot.event
 async def on_ready ():

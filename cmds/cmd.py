@@ -65,11 +65,10 @@ class cmd (cog_ext):
       on_command_error (self, ctx, none)
 
   @commands.command ()
-  async def 吃什麼 (self, ctx, option = None):
+  async def 吃什麼 (self, ctx, *option):
     if (option == None):
       await ctx.send ("你沒給我選項我是要怎麼選")
     else:
-      option = option.split (".")
       await ctx.send (f"吃 {random.choice (option)} 好了")
       
     
