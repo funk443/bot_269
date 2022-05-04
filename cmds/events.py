@@ -25,10 +25,10 @@ class events (cog_ext):
     if (message.author == self.bot.user):
       return
 
-    if (f"data_{message.guild.id}.json" not in os.listdir ("./datas")):
+    if (f"data_reply_{message.guild.id}.json" not in os.listdir ("./datas")):
       return
 
-    f = open (f"./datas/data_{message.guild.id}.json")
+    f = open (f"./datas/data_reply_{message.guild.id}.json")
     data = json.load (f)
     f.close ()
 

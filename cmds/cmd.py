@@ -94,22 +94,28 @@ class cmd (cog_ext):
     f.close ()
 
     if ("add" in option):
-      f = open (f"./datas/data_food_{ctx.guild.id}.json", "w")
-
-      for i in option[1:]:
-        food["food"].append (i)
-
-      json.dump (food, f)
-      f.close ()
+      if (len (option) == 1):
+        await ctx.send ("你沒說要加什麼R")
+      else:
+        f = open (f"./datas/data_food_{ctx.guild.id}.json", "w")
+        
+        for i in option[1:]:
+          food["food"].append (i)
+          
+        json.dump (food, f)
+        f.close ()
     elif ("del" in option):
-      f = open (f"./datas/data_food_{ctx.guild.id}.json", "w")
-      for i in option[1:]:
-        if (i not in food["food"]):
-          await ctx.send (f"先生，沒有{i}")
-        else:
-          food["food"].remove (i)
-      json.dump (food, f)
-      f.close ()
+      if (len (option) == 1):
+        await ctx.send ("你沒說要移除什麼R")
+      else:
+        f = open (f"./datas/data_food_{ctx.guild.id}.json", "w")
+        for i in option[1:]:
+          if (i not in food["food"]):
+            await ctx.send (f"先生，沒有{i}")
+          else:
+            food["food"].remove (i)
+        json.dump (food, f)
+        f.close ()
     elif ("clr" in option):
       f = open (f"./datas/data_food_{ctx.guild.id}.json", "w")
       json.dump ({"food":[]}, f)
