@@ -1,6 +1,7 @@
 import discord
 import json
 import random
+import os
 from discord.ext import commands
 from core.classes import cog_ext
 
@@ -12,19 +13,22 @@ class events (cog_ext):
   @commands.Cog.listener ()
   async def on_member_join (self, member):
     channel = self.bot.get_channel (conf["general"])
-    await channel.send (f"Welcome, {member.mention}")
+    await channel.send (f"你好R, {member.mention}")
 
   @commands.Cog.listener ()
   async def on_member_leave (self, member):
     channel = self.bot.get_channel (conf["general"])
-    await channel.send (f"Goodbye, {member.mention}")
+    await channel.send (f"一路好走, {member.mention}")
   
   @commands.Cog.listener ()
   async def on_message (self, message):
     if (message.author == self.bot.user):
       return
 
-    f = open ("data.json")
+    if (f"data_{message.guild.id}.json" not in os.listdir ("./datas")):
+      return
+
+    f = open (f"./datas/data_{message.guild.id}.json")
     data = json.load (f)
     f.close ()
 
@@ -36,13 +40,13 @@ class events (cog_ext):
       await message.channel.send (f"```{f.read ()}```")
       f.close ()
   
-  @commands.Cog.listener ()
-  async def on_message_edit (self, before, after):
-    if (before.author == self.bot.user):
-      return
+  # @commands.Cog.listener ()
+  # async def on_message_edit (self, before, after):
+  #   if (before.author == self.bot.user):
+  #     return
   
-    word = random.choice (conf["kai"])
-    await before.reply (word)
+  #   word = random.choice (conf["kai"])
+  #   await before.reply (word)
 
   @commands.Cog.listener ()
   async def on_command_error (self, ctx, error):
