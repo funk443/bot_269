@@ -44,10 +44,11 @@ class events (cog_ext):
     word = random.choice (conf["kai"])
     await before.reply (word)
 
-  # @commands.Cog.listener ()
-  # async def on_command_error (self, ctx, error):
-  #   word = random.choice (conf["wtf"])
-  #   await ctx.reply (word)
+  @commands.Cog.listener ()
+  async def on_command_error (self, ctx, error):
+    word = random.choice (conf["wtf"])
+    await ctx.reply (word)
+    await ctx.reply (f"這些東西錯了啦: {error}")
 
 def setup (bot):
   bot.add_cog (events (bot))
