@@ -45,14 +45,31 @@ class cmd (cog_ext):
         else:
           await ctx.send ("先生，沒有那種東西")
 
-    elif (key == "find"):
+    elif (key == "findk"):
       if (content_1 == None):
         await ctx.send ("你沒給我東西我是要怎麼找啦")
       else:
-        if (content_1 in data):
-          await ctx.send (data[content_1])
-        else:
-          await ctx.send ("先生，沒有那種東西")
+        keys = []
+        for k, v in data.items ():
+          if (content_1 in v):
+            keys.append (k)
+
+        for i in keys:
+          data_list = data[i]
+          await ctx.send (f"{i}: {data_list}")
+
+    elif (key == "findv"):
+      if (content_1 == None):
+        await ctx.send ("你沒給我東西我是要怎麼找啦")
+      else:
+        keys = []
+        for k, v in data.items ():
+          if (content_1 in k):
+            keys.append (k)
+
+        for i in keys:
+          data_list = data[i]
+          await ctx.send (f"{i}: {data_list}") 
                              
     elif (key == "list"):
       if (len (data) != 0):
@@ -62,7 +79,7 @@ class cmd (cog_ext):
         await ctx.send ("竟然一個東西都沒有")
           
     else:
-      on_command_error (self, ctx, none)
+      await ctx.reply ("你好像打錯東西囉")
 
   @commands.command ()
   async def 吃什麼 (self, ctx, *option):
@@ -97,15 +114,14 @@ class cmd (cog_ext):
       f = open (f"./datas/data_food_{ctx.guild.id}.json", "w")
       json.dump ({"food":[]}, f)
       f.close ()
-    else:      
-      if (option == []):
-        food_option = food["food"]
-        if (len (food_option) == 0):
-          await ctx.send ("預設清單是空的我要怎麼選啦，用```a269 吃什麼 add```來加入食物")
-        else:
-          await ctx.send (f"沒有給選項，我會從 [{', '.join (food_option)}] 裡選。吃 {random.choice (food_option)} 好了")
+    elif (option == []):
+      food_option = food["food"]
+      if (len (food_option) == 0):
+        await ctx.send ("預設清單是空的我要怎麼選啦，用```a269 吃什麼 add```來加入食物")
       else:
-        await ctx.send (f"吃 {random.choice (option)} 好了")
+        await ctx.send (f"沒有給選項，我會從 [{', '.join (food_option)}] 裡選。吃 {random.choice (food_option)} 好了")
+    else:
+      await ctx.send (f"吃 {random.choice (option)} 好了")
       
     
 def setup (bot):
