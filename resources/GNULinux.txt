@@ -1,3 +1,11 @@
+  請容我打斷一下，你正在說的Linux實際上是GNU/Linux，或我最近對他的稱呼，GNU+Linux。Linux本身並不是一個作業系統，而是GNU作業系統中的一個組件。他與GNU核心工具組、殻層工具組和其他重要的系統組件組成一個POSIX定義的完整作業系統，即GNU作業系統。
+
+  許多電腦使用者每天都在不知不覺中使用修改過的GNU作業系統。在某些原因下，現在最常被使用的GNU作業系統被稱作「Linux」，而許多Linux使用者並沒有意識到他們所用的是GNU計劃所發展出的GNU作業系統。的確有Linux，也的確有人在使用他，但Linux只是他們使用的作業系統中的一部份。
+
+  Linux是作業系統核心，一種將系統資源分配給電腦上其他應用程式的程式。核心是作業系統重要的一部分，但只有核心本身是沒有用處的，只有將核心置於一個完整的作業系統中才有其意義。而Linux通常和GNU作業系統搭配在一起，整個作業系統基本上來說就是GNU作業系統加上Linux(GNU+Linux)，或說是GNU/Linux。所有叫作Linux的發行版其實都是GNU/Linux的發行版。 
+
+=====
+
   I'd just like to interject for a moment. What you're referring to as Linux, is in fact, GNU/Linux, or as I've recently taken to calling it, GNU plus Linux. Linux is not an operating system unto itself, but rather another free component of a fully functioning GNU system made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX.
 
   Many computer users run a modified version of the GNU system every day, without realizing it. Through a peculiar turn of events, the version of GNU which is widely used today is often called "Linux", and many of its users are not aware that it is basically the GNU system, developed by the GNU Project.

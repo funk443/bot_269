@@ -24,9 +24,16 @@ class events (cog_ext):
     if (message.author == self.bot.user):
       return
 
+    f = open ("data.json")
+    data = json.load (f)
+    f.close ()
+
+    if (message.content in data):
+      await message.channel.send (data[message.content])
+
     if ("linux" in message.content.lower ().split ()):
-      f = open (conf["GNULinux"], "r")
-      await message.channel.send (f.read ())
+      f = open (conf["GNULinux"])
+      await message.channel.send (f"```{f.read ()}```")
       f.close ()
   
   @commands.Cog.listener ()
@@ -37,10 +44,10 @@ class events (cog_ext):
     word = random.choice (conf["kai"])
     await before.reply (word)
 
-  @commands.Cog.listener ()
-  async def on_command_error (self, ctx, error):
-    word = random.choice (conf["wtf"])
-    await ctx.reply (word)
+  # @commands.Cog.listener ()
+  # async def on_command_error (self, ctx, error):
+  #   word = random.choice (conf["wtf"])
+  #   await ctx.reply (word)
 
 def setup (bot):
   bot.add_cog (events (bot))

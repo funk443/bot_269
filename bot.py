@@ -17,8 +17,9 @@ async def on_ready ():
   print ("Up")
 
 @bot.command ()
-async def test (ctx):
-  await ctx.send ("ABC")
+async def license (ctx):
+  embed=discord.Embed(title="License", url="https://www.gnu.org/licenses/gpl-3.0.html", description="GNU GPL v3")
+  await ctx.send(embed=embed)
 
 for fn in os.listdir ("./cmds"):
   if (fn.endswith (".py")):
