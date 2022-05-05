@@ -10,15 +10,15 @@ conf = json.load (js)
 js.close ()
 
 class events (cog_ext):
-  @commands.Cog.listener ()
-  async def on_member_join (self, member):
-    channel = self.bot.get_channel (conf["general"])
-    await channel.send (f"你好R, {member.mention}")
+  # @commands.Cog.listener ()
+  # async def on_member_join (self, member):
+  #   channel = self.bot.get_channel (conf["general"])
+  #   await channel.send (f"你好R, {member.mention}")
 
-  @commands.Cog.listener ()
-  async def on_member_leave (self, member):
-    channel = self.bot.get_channel (conf["general"])
-    await channel.send (f"一路好走, {member.mention}")
+  # @commands.Cog.listener ()
+  # async def on_member_leave (self, member):
+  #   channel = self.bot.get_channel (conf["general"])
+  #   await channel.send (f"一路好走, {member.mention}")
   
   @commands.Cog.listener ()
   async def on_message (self, message):
@@ -33,7 +33,11 @@ class events (cog_ext):
     f.close ()
 
     if (message.content in data):
-      await message.channel.send (data[message.content])
+      if (type (data[message.content]) == list):
+        for i in data[message.content]:
+          await message.channel.send (i)
+      else:
+        await message.channel.send (data[message.content])
 
     if ("linux" in message.content.lower ().split ()):
       f = open (conf["GNULinux"])

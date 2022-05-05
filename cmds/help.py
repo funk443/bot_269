@@ -20,7 +20,7 @@ class help_commands (cog_ext):
         await ctx.send (f"```{f_res[cate[0]]}```")
       else:
         result = f_res[cate[0]].split ("^")
-        if (len (result) <= cate[1]):
+        if (len (result) <= cate[1] or (cate[1] <= 0)):
           await ctx.send ("沒有這項啦")
         else:
           result = result[cate[1] - 1] 

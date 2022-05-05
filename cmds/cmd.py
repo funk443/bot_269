@@ -22,7 +22,19 @@ class cmd (cog_ext):
     f.close ()
 
     if (key == "add"):
-      if (content_2 == None):
+      if (content_1 == None):
+        await ctx.send ("你是要我加什麼啦")
+      elif (str (ctx.message.attachments) != ""):
+        f = open (f"./datas/data_reply_{ctx.guild.id}.json", "w")
+        urls = []
+        for i in ctx.message.attachments:
+          urls.append (i.url)
+
+        data[str (content_1)] = urls
+        json.dump (data, f)
+        f.close ()
+        await ctx.send (f"加入了 {content_1}")
+      elif (content_2 == None):
         await ctx.send ("你是要我加什麼啦")
       else:
         f = open (f"./datas/data_reply_{ctx.guild.id}.json", "w")
@@ -30,7 +42,7 @@ class cmd (cog_ext):
         json.dump (data, f)
         f.close ()
 
-        await ctx.send (f"added {content_1}")
+        await ctx.send (f"加入了 {content_1}")
 
     elif (key == "del"):
       if (content_1 == None):
@@ -41,7 +53,7 @@ class cmd (cog_ext):
           data.pop (content_1)
           json.dump (data, f)
           f.close ()
-          await ctx.send ("del")
+          await ctx.send (f"刪除了 {content_1}")
         else:
           await ctx.send ("先生，沒有那種東西")
 
