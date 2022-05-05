@@ -24,7 +24,7 @@ class cmd (cog_ext):
     if (key == "add"):
       if (content_1 == None):
         await ctx.send ("你是要我加什麼啦")
-      elif (str (ctx.message.attachments) != ""):
+      elif (len (ctx.message.attachments) != 0):
         f = open (f"./datas/data_reply_{ctx.guild.id}.json", "w")
         urls = []
         for i in ctx.message.attachments:
@@ -132,6 +132,10 @@ class cmd (cog_ext):
       f = open (f"./datas/data_food_{ctx.guild.id}.json", "w")
       json.dump ({"food":[]}, f)
       f.close ()
+    elif ("list" in option):
+      food_list = food["food"]
+
+      await ctx.send (food_list)
     elif (option == []):
       food_option = food["food"]
       if (len (food_option) == 0):
