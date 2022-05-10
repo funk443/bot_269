@@ -25,6 +25,10 @@ class events (cog_ext):
     if (message.author == self.bot.user):
       return
 
+    if ((message.author.id == 159985870458322944) and (message.author.bot == True)
+        and ("484要制裁一下" in message.content)):
+      await message.reply ("閉嘴好不好")
+
     if (f"data_reply_{message.guild.id}.json" not in os.listdir ("./datas")):
       return
 
