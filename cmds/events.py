@@ -9,15 +9,6 @@ Copyright (C) 2022 CToID
 
   You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 """
-
-import discord
-import json
-import os
-from discord.ext import commands
-
-intents = discord.Intents.default ()
-intents.members = True
-intents.guilds = True
 import discord
 import json
 import random
