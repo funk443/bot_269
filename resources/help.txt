@@ -33,6 +33,10 @@ Table of Contents
 
 請使用 `a269 help <目錄中的數字(如1或3.2等)>' 來看更詳細的說明。
 
+使用 `a269 license' 和 `a269 copyright' 來查看授權條款和版權聲明。
+
+copyright (C) 2022 CToID
+
 &
 
 
