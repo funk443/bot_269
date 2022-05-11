@@ -1,8 +1,8 @@
-                            ━━━━━━━━━━━━━━━━
-                             BOT269使用說明
+                           ━━━━━━━━━━━━━━━━━
+                            BOT_269使用說明
 
                                CToID(269)
-                            ━━━━━━━━━━━━━━━━
+                           ━━━━━━━━━━━━━━━━━
 
 
 Table of Contents
@@ -36,6 +36,11 @@ Table of Contents
 請使用 `a269 help <目錄中的數字(如1或3.2等)>' 來看更詳細的說明。
 使用 `a269 license' 來查看授權條款和版權聲明。
 原始碼可以在 <https://github.com/funk443/bot_269> 找到。
+
+有任何問題也可以連絡我(雖然我也不一定知道怎麼解決就是了):
+• Discord: ID#2120
+• e-mail: funk443@tutanota.com
+• 巴哈: CToID(funk443)
 
 copyright (C) 2022 CToID
 
