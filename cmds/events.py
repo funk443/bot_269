@@ -36,6 +36,18 @@ class events (cog_ext):
     if (message.author == self.bot.user):
       return
 
+    if ("PREFIX" == message.content):
+      f = open ("prefixes.json", "r")
+      pf = json.load (f)
+      f.close ()
+
+      try:
+        pref = pf[str (message.guild.id)]
+      except:
+        pref = pf["default"]
+
+      await message.channel.send (f'現在的前綴字是"`{pref}`"')
+
     if ((message.author.id == 159985870458322944) and (message.author.bot == True)
         and ("484要制裁一下" in message.content)):
       await message.reply ("閉嘴好不好")

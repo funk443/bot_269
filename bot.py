@@ -58,6 +58,7 @@ async def change_prefix (ctx, npf = None):
     f = open ("prefixes.json", "w")
     json.dump (pfs, f)
     f.close ()
+    await ctx.send (f"Prefix changed to {npf}")
   else:
     pfs[str (ctx.guild.id)] = "a269 "
     await ctx.send ("沒給我東西那我就把他改回預設的了")
