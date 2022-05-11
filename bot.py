@@ -45,24 +45,28 @@ async def on_ready ():
   print ("Up")
 
 @bot.command ()
-async def license (ctx):
+async def copyright (ctx):
   f = open ("./resources/license_notice", "r")
   lic = f.read ()
   f.close ()
   await ctx.send (f"```{lic}```")
 
 @bot.command ()
+async def license (ctx):
+  await ctx.send (file = discord.File ("LICENSE.txt"))
+
+@bot.command ()
 async def change_prefix (ctx, npf = None):
   if (npf != None):
     pfs[str (ctx.guild.id)] = npf
-    f = open ("prefixes.json", "w")
-    json.dump (pfs, f)
-    f.close ()
     await ctx.send (f"Prefix changed to {npf}")
   else:
     pfs[str (ctx.guild.id)] = "a269 "
     await ctx.send ("沒給我東西那我就把他改回預設的了")
 
+  f = open ("prefixes.json", "w")
+  json.dump (pfs, f)
+  f.close ()
 
 for fn in os.listdir ("./cmds"):
   if (fn.endswith (".py")):

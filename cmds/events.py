@@ -55,8 +55,15 @@ class events (cog_ext):
     if (f"data_reply_{message.guild.id}.json" not in os.listdir ("./datas")):
       return
 
+    if (f"data_react_{message.guild.id}.json" not in os.listdir ("./datas")):
+      return
+
     f = open (f"./datas/data_reply_{message.guild.id}.json")
     data = json.load (f)
+    f.close ()
+
+    f = open (f"./datas/data_react_{message.guild.id}.json", "r")
+    reacts = json.load (f)
     f.close ()
 
     if (message.content in data):
@@ -65,6 +72,10 @@ class events (cog_ext):
           await message.channel.send (i)
       else:
         await message.channel.send (data[message.content])
+
+    if (message.content in reacts):
+      for i in reacts[message.content]:
+        await message.add_reaction (i)
 
     if ("linux" in message.content.lower ().split ()):
       f = open (conf["GNULinux"])

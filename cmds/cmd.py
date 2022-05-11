@@ -53,7 +53,7 @@ class cmd (cog_ext):
         json.dump (data, f)
         f.close ()
 
-        await ctx.send (f"加入了 {content_1}")
+        await ctx.send (f"以後有人傳{content_1}，我會回{content_2}")
 
     elif (key == "del"):
       if (content_1 == None):
@@ -103,6 +103,75 @@ class cmd (cog_ext):
           
     else:
       await ctx.reply ("你好像打錯東西囉")
+
+  @commands.command ()
+  async def react (self, ctx, key, content_1 = None, *content_2):
+    if (f"data_react_{ctx.guild.id}.json" not in os.listdir ("./datas")):
+      f = open (f"./datas/data_react_{ctx.guild.id}.json", "w")
+      json.dump ({}, f)
+      f.close ()
+
+    f = open (f"./datas/data_react_{ctx.guild.id}.json", "r")
+    reacts = json.load (f)
+    f.close ()
+
+    if (key == "add"):
+      if ((content_1 == None) or (len (content_2) == 0)):
+        await ctx.send ("你沒給我東西我要怎麼加")
+      else:
+        f = open (f"./datas/data_react_{ctx.guild.id}.json", "w")
+        reacts[content_1] = content_2
+        json.dump (reacts, f)
+        f.close ()
+        await ctx.send (f"以後看到{content_1}，我會按{content_2}")
+        
+    elif (key == "del"):
+      if (content_1 == None):
+        await ctx.send ("你沒給我東西我要怎麼刪")
+      elif (content_1 not in reacts):
+        await ctx.send (f"先生，這裡沒有{content_1}")
+      else:
+        f = open (f"./datas/data_react_{ctx.guild.id}.json", "w")
+        reacts.pop(content_1)
+        json.dump (reacts, f)
+        f.close ()
+        await ctx.send (f"掰掰{content_1}")
+
+    elif (key == "findk"):
+      if (content_1 == None):
+        await ctx.send ("你沒給我東西我是要怎麼找啦")
+      else:
+        keys = []
+        for k, v in data.items ():
+          if (content_1 in v):
+            keys.append (k)
+
+        for i in keys:
+          data_list = data[i]
+          await ctx.send (f"{i}: {data_list}")
+
+    elif (key == "findv"):
+      if (content_1 == None):
+        await ctx.send ("你沒給我東西我是要怎麼找啦")
+      else:
+        keys = []
+        for k, v in data.items ():
+          if (content_1 in k):
+            keys.append (k)
+
+        for i in keys:
+          data_list = data[i]
+          await ctx.send (f"{i}: {data_list}") 
+
+    elif (key == "list"):
+      if (len (reacts) != 0):
+        for i in reacts:
+          await ctx.send (f"```{i}:{reacts[i]}```")
+      else:
+        await ctx.send ("竟然一個東西都沒有")
+
+    else:
+      ctx.send ("你是不是打錯了什麼東西")
 
   @commands.command ()
   async def 吃什麼 (self, ctx, *option):
