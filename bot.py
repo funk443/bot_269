@@ -28,7 +28,17 @@ f = open ("config.json", "r")
 conf = json.load (f)
 f.close ()
 
-bot = commands.Bot (command_prefix = conf["prefix"], intents = intents, activity = activity, help_command = None)
+f = open ("prefixes.json", "r")
+pfs = json.load (f)
+f.close ()
+
+async def get_prefix (bot, ctx):
+  if (str (ctx.guild.id) not in pfs):
+    return pfs["default"]
+  else:
+    return pfs[str (ctx.guild.id)]
+
+bot = commands.Bot (command_prefix = get_prefix, intents = intents, activity = activity, help_command = None)
 
 @bot.event
 async def on_ready ():
@@ -41,16 +51,16 @@ async def license (ctx):
   f.close ()
   await ctx.send (f"```{lic}```")
 
-# @bot.command ()
-# async def pf (ctx, npf = None):
-#   if (npf != None):
-#     conf["prefix"] = f"{npf} "
-#     f = open ("config.json", "w")
-#     json.dump (conf, f)
-#     f.close ()
-#     await ctx.send (f"Prefix changed to {npf}")
-#   else:
-#     await ctx.send ("沒給我東西是要怎麼改啦")
+@bot.command ()
+async def change_prefix (ctx, npf = None):
+  if (npf != None):
+    pfs[str (ctx.guild.id)] = npf
+    f = open ("prefixes.json", "w")
+    json.dump (pfs, f)
+    f.close ()
+  else:
+    pfs[str (ctx.guild.id)] = "a269 "
+    await ctx.send ("沒給我東西那我就把他改回預設的了")
 
 
 for fn in os.listdir ("./cmds"):
