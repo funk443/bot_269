@@ -48,6 +48,15 @@ class events (cog_ext):
 
       await message.channel.send (f'現在的前綴字是"`{pref}`"')
 
+    if ("LICENSE" == message.content):
+      await message.channel.send (file = discord.File ("LICENSE.txt"))
+
+    if ("COPYRIGHT" == message.content):
+      f = open ("./resources/license_notice", "r")
+      lic = f.read ()
+      f.close ()
+      await message.channel.send (f"```{lic}```")
+
     if ((message.author.id == 159985870458322944) and (message.author.bot == True)
         and ("484要制裁一下" in message.content)):
       await message.reply ("閉嘴好不好")

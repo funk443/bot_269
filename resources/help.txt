@@ -41,7 +41,7 @@ Table of Contents
  指令中不會有這些符號。*
 
 請使用 `a269 help <目錄中的數字(如1或3.2等)>' 來看更詳細的說明。
-使用 `a269 copyright', `a269 license' 來查看授權條款和版權聲明。
+直接在聊天室中輸入 `COPYRIGHT' 或 `LICENSE' 來查看版權聲明和授權條款。
 原始碼可以在 <https://github.com/funk443/bot_269> 找到。
 
 有任何問題也可以連絡我(雖然我也不一定知道怎麼解決就是了):

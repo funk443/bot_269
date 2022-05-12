@@ -44,16 +44,16 @@ bot = commands.Bot (command_prefix = get_prefix, intents = intents, activity = a
 async def on_ready ():
   print ("Up")
 
-@bot.command ()
-async def copyright (ctx):
-  f = open ("./resources/license_notice", "r")
-  lic = f.read ()
-  f.close ()
-  await ctx.send (f"```{lic}```")
+# @bot.command ()
+# async def copyright (ctx):
+#   f = open ("./resources/license_notice", "r")
+#   lic = f.read ()
+#   f.close ()
+#   await ctx.send (f"```{lic}```")
 
-@bot.command ()
-async def license (ctx):
-  await ctx.send (file = discord.File ("LICENSE.txt"))
+# @bot.command ()
+# async def license (ctx):
+#   await ctx.send (file = discord.File ("LICENSE.txt"))
 
 @bot.command ()
 async def change_prefix (ctx, npf = None):

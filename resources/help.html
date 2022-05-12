@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-12 Thu 01:01 -->
+<!-- 2022-05-12 Thu 16:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>bot_269使用說明</title>
@@ -201,44 +201,44 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6ad5b48">1. 幫助指令(help)</a>
+<li><a href="#org519547c">1. 幫助指令(help)</a>
 <ul>
-<li><a href="#orgfa1d508">1.1. 幫助目錄</a></li>
-<li><a href="#orge4e070c">1.2. 詳細說明</a></li>
+<li><a href="#org227c783">1.1. 幫助目錄</a></li>
+<li><a href="#orgd7eb629">1.2. 詳細說明</a></li>
 </ul>
 </li>
-<li><a href="#orgfc78cfe">2. 前綴字(prefix)</a>
+<li><a href="#orgfb100c5">2. 前綴字(prefix)</a>
 <ul>
-<li><a href="#orgda4ead9">2.1. 查詢目前前綴字(PREFIX)</a></li>
-<li><a href="#org64228c6">2.2. 更改前綴字(change_prefix)</a></li>
+<li><a href="#org3d251cd">2.1. 查詢目前前綴字(PREFIX)</a></li>
+<li><a href="#org2e2880b">2.2. 更改前綴字(change_prefix)</a></li>
 </ul>
 </li>
-<li><a href="#orge0a241b">3. 回覆指令(reply)</a>
+<li><a href="#org34230ab">3. 回覆指令(reply)</a>
 <ul>
-<li><a href="#org45fc334">3.1. 新增/修改回覆(add)</a></li>
-<li><a href="#orgbba250a">3.2. 刪除回覆(del)</a></li>
-<li><a href="#org4f23785">3.3. 尋找關鍵字(findk)</a></li>
-<li><a href="#orge9064c9">3.4. 尋找回覆(findv)</a></li>
-<li><a href="#org5bb3597">3.5. 列出所有關鍵字列表(list)</a></li>
+<li><a href="#orgaef19c0">3.1. 新增/修改回覆(add)</a></li>
+<li><a href="#org0e96944">3.2. 刪除回覆(del)</a></li>
+<li><a href="#orgcefdf63">3.3. 尋找關鍵字(findk)</a></li>
+<li><a href="#org5bf132b">3.4. 尋找回覆(findv)</a></li>
+<li><a href="#orgcf99f66">3.5. 列出所有關鍵字列表(list)</a></li>
 </ul>
 </li>
-<li><a href="#org2b84015">4. 回應指令(react)</a>
+<li><a href="#orgd9c8d5e">4. 回應指令(react)</a>
 <ul>
-<li><a href="#orgbffaaed">4.1. 新增/修改回應(add)</a></li>
-<li><a href="#orgb8d3ea3">4.2. 刪除回覆(del)</a></li>
-<li><a href="#org3451a02">4.3. 尋找關鍵字(findk)</a></li>
-<li><a href="#org71a999d">4.4. 尋找回覆(findv)</a></li>
-<li><a href="#org35ff098">4.5. 列出所有關鍵字列表(list)</a></li>
+<li><a href="#orgf3cabf9">4.1. 新增/修改回應(add)</a></li>
+<li><a href="#orgd8b396d">4.2. 刪除回覆(del)</a></li>
+<li><a href="#orgaefdf4b">4.3. 尋找關鍵字(findk)</a></li>
+<li><a href="#org4090412">4.4. 尋找回覆(findv)</a></li>
+<li><a href="#org8ddbc8d">4.5. 列出所有關鍵字列表(list)</a></li>
 </ul>
 </li>
-<li><a href="#orgd9acbce">5. 吃什麼指令</a>
+<li><a href="#org47bfdfa">5. 吃什麼指令</a>
 <ul>
-<li><a href="#org7febf74">5.1. 從預設清單中挑食物</a></li>
-<li><a href="#org564e57f">5.2. 新增食物到預設清單(add)</a></li>
-<li><a href="#org31c36b9">5.3. 將食物從預設清單中移除(del)</a></li>
-<li><a href="#org4cb51bb">5.4. 將預設清單清空(clr)</a></li>
-<li><a href="#org118853f">5.5. 查看預設清單(list)</a></li>
-<li><a href="#orgea9860d">5.6. 不使用預設清單挑選食物</a></li>
+<li><a href="#orge947a7f">5.1. 從預設清單中挑食物</a></li>
+<li><a href="#org2504497">5.2. 新增食物到預設清單(add)</a></li>
+<li><a href="#orgacb6836">5.3. 將食物從預設清單中移除(del)</a></li>
+<li><a href="#orgf5782d8">5.4. 將預設清單清空(clr)</a></li>
+<li><a href="#org15913da">5.5. 查看預設清單(list)</a></li>
+<li><a href="#org2b6ec8c">5.6. 不使用預設清單挑選食物</a></li>
 </ul>
 </li>
 </ul>
@@ -251,7 +251,7 @@
 
 <p>
 請使用 <code>a269 help &lt;目錄中的數字(如1或3.2等)&gt;</code> 來看更詳細的說明。<br />
-使用 <code>a269 copyright</code>, <code>a269 license</code> 來查看授權條款和版權聲明。<br />
+直接在聊天室中輸入 <code>COPYRIGHT</code> 或 <code>LICENSE</code> 來查看版權聲明和授權條款。<br />
 原始碼可以在 <a href="https://github.com/funk443/bot_269">https://github.com/funk443/bot_269</a> 找到。<br />
 </p>
 
@@ -273,12 +273,12 @@ copyright (C) 2022 CToID<br />
 </p>
 
 
-<div id="outline-container-org6ad5b48" class="outline-2">
-<h2 id="org6ad5b48"><span class="section-number-2">1.</span> 幫助指令(help)</h2>
+<div id="outline-container-org519547c" class="outline-2">
+<h2 id="org519547c"><span class="section-number-2">1.</span> 幫助指令(help)</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgfa1d508" class="outline-3">
-<h3 id="orgfa1d508"><span class="section-number-3">1.1.</span> 幫助目錄</h3>
+<div id="outline-container-org227c783" class="outline-3">
+<h3 id="org227c783"><span class="section-number-3">1.1.</span> 幫助目錄</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 用法: <code>a269 help</code> <br />
@@ -289,8 +289,8 @@ copyright (C) 2022 CToID<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orge4e070c" class="outline-3">
-<h3 id="orge4e070c"><span class="section-number-3">1.2.</span> 詳細說明</h3>
+<div id="outline-container-orgd7eb629" class="outline-3">
+<h3 id="orgd7eb629"><span class="section-number-3">1.2.</span> 詳細說明</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 用法: <code>a269 help &lt;目錄中的數字(可以是1或是2.1等)&gt;</code><br />
@@ -303,12 +303,12 @@ copyright (C) 2022 CToID<br />
 </div>
 </div>
 </div>
-<div id="outline-container-orgfc78cfe" class="outline-2">
-<h2 id="orgfc78cfe"><span class="section-number-2">2.</span> 前綴字(prefix)</h2>
+<div id="outline-container-orgfb100c5" class="outline-2">
+<h2 id="orgfb100c5"><span class="section-number-2">2.</span> 前綴字(prefix)</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgda4ead9" class="outline-3">
-<h3 id="orgda4ead9"><span class="section-number-3">2.1.</span> 查詢目前前綴字(PREFIX)</h3>
+<div id="outline-container-org3d251cd" class="outline-3">
+<h3 id="org3d251cd"><span class="section-number-3">2.1.</span> 查詢目前前綴字(PREFIX)</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 用法: <code>PREFIX</code><br />
@@ -319,8 +319,8 @@ copyright (C) 2022 CToID<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org64228c6" class="outline-3">
-<h3 id="org64228c6"><span class="section-number-3">2.2.</span> 更改前綴字(change_prefix)</h3>
+<div id="outline-container-org2e2880b" class="outline-3">
+<h3 id="org2e2880b"><span class="section-number-3">2.2.</span> 更改前綴字(change_prefix)</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 用法: <code>a269 change_prefix &lt;要改成什麼前綴字&gt;</code><br />
@@ -336,12 +336,12 @@ copyright (C) 2022 CToID<br />
 </div>
 </div>
 </div>
-<div id="outline-container-orge0a241b" class="outline-2">
-<h2 id="orge0a241b"><span class="section-number-2">3.</span> 回覆指令(reply)</h2>
+<div id="outline-container-org34230ab" class="outline-2">
+<h2 id="org34230ab"><span class="section-number-2">3.</span> 回覆指令(reply)</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org45fc334" class="outline-3">
-<h3 id="org45fc334"><span class="section-number-3">3.1.</span> 新增/修改回覆(add)</h3>
+<div id="outline-container-orgaef19c0" class="outline-3">
+<h3 id="orgaef19c0"><span class="section-number-3">3.1.</span> 新增/修改回覆(add)</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 用法1: <code>a269 reply add &lt;觸發關鍵字&gt; &lt;回覆內容&gt;</code><br />
@@ -355,8 +355,8 @@ copyright (C) 2022 CToID<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgbba250a" class="outline-3">
-<h3 id="orgbba250a"><span class="section-number-3">3.2.</span> 刪除回覆(del)</h3>
+<div id="outline-container-org0e96944" class="outline-3">
+<h3 id="org0e96944"><span class="section-number-3">3.2.</span> 刪除回覆(del)</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 用法: <code>a269 reply del &lt;觸發關鍵字&gt;</code> <br />
@@ -367,8 +367,8 @@ copyright (C) 2022 CToID<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org4f23785" class="outline-3">
-<h3 id="org4f23785"><span class="section-number-3">3.3.</span> 尋找關鍵字(findk)</h3>
+<div id="outline-container-orgcefdf63" class="outline-3">
+<h3 id="orgcefdf63"><span class="section-number-3">3.3.</span> 尋找關鍵字(findk)</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 用法: <code>a269 reply findk &lt;回覆內容&gt;</code> <br />
@@ -379,8 +379,8 @@ copyright (C) 2022 CToID<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orge9064c9" class="outline-3">
-<h3 id="orge9064c9"><span class="section-number-3">3.4.</span> 尋找回覆(findv)</h3>
+<div id="outline-container-org5bf132b" class="outline-3">
+<h3 id="org5bf132b"><span class="section-number-3">3.4.</span> 尋找回覆(findv)</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 用法: <code>a269 reply findv &lt;觸發關鍵字&gt;</code> <br />
@@ -391,8 +391,8 @@ copyright (C) 2022 CToID<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org5bb3597" class="outline-3">
-<h3 id="org5bb3597"><span class="section-number-3">3.5.</span> 列出所有關鍵字列表(list)</h3>
+<div id="outline-container-orgcf99f66" class="outline-3">
+<h3 id="orgcf99f66"><span class="section-number-3">3.5.</span> 列出所有關鍵字列表(list)</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 用法: <code>a269 reply list</code> ^<br />
@@ -401,12 +401,12 @@ copyright (C) 2022 CToID<br />
 </div>
 </div>
 </div>
-<div id="outline-container-org2b84015" class="outline-2">
-<h2 id="org2b84015"><span class="section-number-2">4.</span> 回應指令(react)</h2>
+<div id="outline-container-orgd9c8d5e" class="outline-2">
+<h2 id="orgd9c8d5e"><span class="section-number-2">4.</span> 回應指令(react)</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgbffaaed" class="outline-3">
-<h3 id="orgbffaaed"><span class="section-number-3">4.1.</span> 新增/修改回應(add)</h3>
+<div id="outline-container-orgf3cabf9" class="outline-3">
+<h3 id="orgf3cabf9"><span class="section-number-3">4.1.</span> 新增/修改回應(add)</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 用法: <code>a269 react add &lt;觸發關鍵字&gt; &lt;要回應的表符1&gt; &lt;要回應的表符2&gt;...(表符間可以用空格格開，也可以不用)</code><br />
@@ -417,8 +417,8 @@ copyright (C) 2022 CToID<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgb8d3ea3" class="outline-3">
-<h3 id="orgb8d3ea3"><span class="section-number-3">4.2.</span> 刪除回覆(del)</h3>
+<div id="outline-container-orgd8b396d" class="outline-3">
+<h3 id="orgd8b396d"><span class="section-number-3">4.2.</span> 刪除回覆(del)</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 用法: <code>a269 reply del &lt;觸發關鍵字&gt;</code> <br />
@@ -429,8 +429,8 @@ copyright (C) 2022 CToID<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org3451a02" class="outline-3">
-<h3 id="org3451a02"><span class="section-number-3">4.3.</span> 尋找關鍵字(findk)</h3>
+<div id="outline-container-orgaefdf4b" class="outline-3">
+<h3 id="orgaefdf4b"><span class="section-number-3">4.3.</span> 尋找關鍵字(findk)</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 用法: <code>a269 reply findk &lt;回應表符&gt;</code> <br />
@@ -441,8 +441,8 @@ copyright (C) 2022 CToID<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org71a999d" class="outline-3">
-<h3 id="org71a999d"><span class="section-number-3">4.4.</span> 尋找回覆(findv)</h3>
+<div id="outline-container-org4090412" class="outline-3">
+<h3 id="org4090412"><span class="section-number-3">4.4.</span> 尋找回覆(findv)</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 用法: <code>a269 reply findv &lt;觸發關鍵字&gt;</code> <br />
@@ -453,8 +453,8 @@ copyright (C) 2022 CToID<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org35ff098" class="outline-3">
-<h3 id="org35ff098"><span class="section-number-3">4.5.</span> 列出所有關鍵字列表(list)</h3>
+<div id="outline-container-org8ddbc8d" class="outline-3">
+<h3 id="org8ddbc8d"><span class="section-number-3">4.5.</span> 列出所有關鍵字列表(list)</h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
 用法: <code>a269 reply list</code> ^<br />
@@ -463,52 +463,52 @@ copyright (C) 2022 CToID<br />
 </div>
 </div>
 </div>
-<div id="outline-container-orgd9acbce" class="outline-2">
-<h2 id="orgd9acbce"><span class="section-number-2">5.</span> 吃什麼指令</h2>
+<div id="outline-container-org47bfdfa" class="outline-2">
+<h2 id="org47bfdfa"><span class="section-number-2">5.</span> 吃什麼指令</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org7febf74" class="outline-3">
-<h3 id="org7febf74"><span class="section-number-3">5.1.</span> 從預設清單中挑食物</h3>
+<div id="outline-container-orge947a7f" class="outline-3">
+<h3 id="orge947a7f"><span class="section-number-3">5.1.</span> 從預設清單中挑食物</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 用法: <code>a269 吃什麼</code> ^<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org564e57f" class="outline-3">
-<h3 id="org564e57f"><span class="section-number-3">5.2.</span> 新增食物到預設清單(add)</h3>
+<div id="outline-container-org2504497" class="outline-3">
+<h3 id="org2504497"><span class="section-number-3">5.2.</span> 新增食物到預設清單(add)</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 用法: <code>a269 吃什麼 add &lt;食物1&gt; &lt;食物2&gt;....(食物間以空白隔開)</code> ^<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org31c36b9" class="outline-3">
-<h3 id="org31c36b9"><span class="section-number-3">5.3.</span> 將食物從預設清單中移除(del)</h3>
+<div id="outline-container-orgacb6836" class="outline-3">
+<h3 id="orgacb6836"><span class="section-number-3">5.3.</span> 將食物從預設清單中移除(del)</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 用法: <code>a269 吃什麼 del &lt;食物1&gt; &lt;食物2&gt;....(食物間以空白隔開)</code> ^<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org4cb51bb" class="outline-3">
-<h3 id="org4cb51bb"><span class="section-number-3">5.4.</span> 將預設清單清空(clr)</h3>
+<div id="outline-container-orgf5782d8" class="outline-3">
+<h3 id="orgf5782d8"><span class="section-number-3">5.4.</span> 將預設清單清空(clr)</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 用法: <code>a269 吃什麼 clr</code> ^<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org118853f" class="outline-3">
-<h3 id="org118853f"><span class="section-number-3">5.5.</span> 查看預設清單(list)</h3>
+<div id="outline-container-org15913da" class="outline-3">
+<h3 id="org15913da"><span class="section-number-3">5.5.</span> 查看預設清單(list)</h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 用法: <code>a269 吃什麼 list</code> ^<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgea9860d" class="outline-3">
-<h3 id="orgea9860d"><span class="section-number-3">5.6.</span> 不使用預設清單挑選食物</h3>
+<div id="outline-container-org2b6ec8c" class="outline-3">
+<h3 id="org2b6ec8c"><span class="section-number-3">5.6.</span> 不使用預設清單挑選食物</h3>
 <div class="outline-text-3" id="text-5-6">
 <p>
 用法: <code>a269 吃什麼 &lt;食物1&gt; &lt;食物2&gt;....(食物間以空白隔開)</code> ^<br />
@@ -520,7 +520,7 @@ copyright (C) 2022 CToID<br />
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: CToID(269)</p>
-<p class="date">Created: 2022-05-12 Thu 01:01</p>
+<p class="date">Created: 2022-05-12 Thu 16:23</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
