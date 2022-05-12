@@ -61,21 +61,21 @@ class events (cog_ext):
         and ("484要制裁一下" in message.content)):
       await message.reply ("閉嘴好不好")
 
-    if (f"data_reply_{message.guild.id}.json" not in os.listdir ("./datas")):
+    if (f"data_reply_{message.guild.id}.json" not in os.listdir ("./datas/reply")):
       f = open (f"./datas/data_reply_{message.guild.id}.json", "w")
       json.dump ({}, f)
       f.close ()
 
-    if (f"data_react_{message.guild.id}.json" not in os.listdir ("./datas")):
+    if (f"data_react_{message.guild.id}.json" not in os.listdir ("./datas/react")):
       f = open (f"./datas/data_react_{message.guild.id}.json", "w")
       json.dump ({}, f)
       f.close ()
 
-    f = open (f"./datas/data_reply_{message.guild.id}.json")
+    f = open (f"./datas/reply/data_reply_{message.guild.id}.json")
     data = json.load (f)
     f.close ()
 
-    f = open (f"./datas/data_react_{message.guild.id}.json", "r")
+    f = open (f"./datas/react/data_react_{message.guild.id}.json", "r")
     reacts = json.load (f)
     f.close ()
 

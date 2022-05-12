@@ -23,12 +23,12 @@ js.close ()
 class cmd (cog_ext):
   @commands.command ()
   async def reply (self, ctx, key, content_1 = None, content_2 = None):
-    if (f"data_reply_{ctx.guild.id}.json" not in os.listdir ("./datas")):
-      f = open (f"./datas/data_reply_{ctx.guild.id}.json", "w")
+    if (f"data_reply_{ctx.guild.id}.json" not in os.listdir ("./datas/reply")):
+      f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "w")
       json.dump ({}, f)
       f.close ()
 
-    f = open (f"./datas/data_reply_{ctx.guild.id}.json", "r")
+    f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "r")
     data = json.load (f)
     f.close ()
 
@@ -36,7 +36,7 @@ class cmd (cog_ext):
       if (content_1 == None):
         await ctx.send ("你是要我加什麼啦")
       elif (len (ctx.message.attachments) != 0):
-        f = open (f"./datas/data_reply_{ctx.guild.id}.json", "w")
+        f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "w")
         urls = []
         for i in ctx.message.attachments:
           urls.append (i.url)
@@ -48,7 +48,7 @@ class cmd (cog_ext):
       elif (content_2 == None):
         await ctx.send ("你是要我加什麼啦")
       else:
-        f = open (f"./datas/data_reply_{ctx.guild.id}.json", "w")
+        f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "w")
         data[str (content_1)] = str (content_2)
         json.dump (data, f)
         f.close ()
@@ -60,7 +60,7 @@ class cmd (cog_ext):
         await ctx.send ("你沒給我東西我是要刪什麼啦")
       else:
         if (content_1 in data):
-          f = open (f"./datas/data_reply_{ctx.guild.id}.json", "w")
+          f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "w")
           data.pop (content_1)
           json.dump (data, f)
           f.close ()
@@ -106,12 +106,12 @@ class cmd (cog_ext):
 
   @commands.command ()
   async def react (self, ctx, key, content_1 = None, *content_2):
-    if (f"data_react_{ctx.guild.id}.json" not in os.listdir ("./datas")):
-      f = open (f"./datas/data_react_{ctx.guild.id}.json", "w")
+    if (f"data_react_{ctx.guild.id}.json" not in os.listdir ("./datas/react")):
+      f = open (f"./datas/react/data_react_{ctx.guild.id}.json", "w")
       json.dump ({}, f)
       f.close ()
 
-    f = open (f"./datas/data_react_{ctx.guild.id}.json", "r")
+    f = open (f"./datas/react/data_react_{ctx.guild.id}.json", "r")
     reacts = json.load (f)
     f.close ()
 
@@ -119,7 +119,7 @@ class cmd (cog_ext):
       if ((content_1 == None) or (len (content_2) == 0)):
         await ctx.send ("你沒給我東西我要怎麼加")
       else:
-        f = open (f"./datas/data_react_{ctx.guild.id}.json", "w")
+        f = open (f"./datas/react/data_react_{ctx.guild.id}.json", "w")
         reacts[content_1] = content_2
         json.dump (reacts, f)
         f.close ()
@@ -131,7 +131,7 @@ class cmd (cog_ext):
       elif (content_1 not in reacts):
         await ctx.send (f"先生，這裡沒有{content_1}")
       else:
-        f = open (f"./datas/data_react_{ctx.guild.id}.json", "w")
+        f = open (f"./datas/react/data_react_{ctx.guild.id}.json", "w")
         reacts.pop(content_1)
         json.dump (reacts, f)
         f.close ()
@@ -176,12 +176,12 @@ class cmd (cog_ext):
   @commands.command ()
   async def 吃什麼 (self, ctx, *option):
     option = list (option)
-    if (f"data_food_{ctx.guild.id}.json" not in os.listdir ("./datas")):
-      f = open (f"./datas/data_food_{ctx.guild.id}.json", "w")
+    if (f"data_food_{ctx.guild.id}.json" not in os.listdir ("./datas/food")):
+      f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "w")
       json.dump ({"food":[]}, f)
       f.close ()
 
-    f = open (f"./datas/data_food_{ctx.guild.id}.json", "r")
+    f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "r")
     food = json.load (f)
     f.close ()
 
@@ -189,7 +189,7 @@ class cmd (cog_ext):
       if (len (option) == 1):
         await ctx.send ("你沒說要加什麼R")
       else:
-        f = open (f"./datas/data_food_{ctx.guild.id}.json", "w")
+        f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "w")
         
         for i in option[1:]:
           food["food"].append (i)
@@ -200,7 +200,7 @@ class cmd (cog_ext):
       if (len (option) == 1):
         await ctx.send ("你沒說要移除什麼R")
       else:
-        f = open (f"./datas/data_food_{ctx.guild.id}.json", "w")
+        f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "w")
         for i in option[1:]:
           if (i not in food["food"]):
             await ctx.send (f"先生，沒有{i}")
@@ -209,7 +209,7 @@ class cmd (cog_ext):
         json.dump (food, f)
         f.close ()
     elif ("clr" in option):
-      f = open (f"./datas/data_food_{ctx.guild.id}.json", "w")
+      f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "w")
       json.dump ({"food":[]}, f)
       f.close ()
     elif ("list" in option):
