@@ -53,10 +53,14 @@ class events (cog_ext):
       await message.reply ("閉嘴好不好")
 
     if (f"data_reply_{message.guild.id}.json" not in os.listdir ("./datas")):
-      return
+      f = open (f"./datas/data_reply_{message.guild.id}.json", "w")
+      json.dump ({}, f)
+      f.close ()
 
     if (f"data_react_{message.guild.id}.json" not in os.listdir ("./datas")):
-      return
+      f = open (f"./datas/data_react_{message.guild.id}.json", "w")
+      json.dump ({}, f)
+      f.close ()
 
     f = open (f"./datas/data_reply_{message.guild.id}.json")
     data = json.load (f)
