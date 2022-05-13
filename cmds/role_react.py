@@ -64,7 +64,7 @@ class role_react (cog_ext):
       else:
         await bot_msg.add_reaction (temp2[0])
 
-    print (msgs)
+    # print (msgs)
 
     f = open (f"./datas/role_select/role_select_{ctx.guild.id}.json", "w")
     json.dump (msgs, f)
