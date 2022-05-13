@@ -26,8 +26,9 @@ class configs (cog_ext):
 
   @commands.command ()
   async def svr_conf (self, ctx, key = None, option = None, ans = None):
+    default = open (f"./datas/config/server/default.json", "r")
+
     if (f"svr_conf_{ctx.guild.id}.json" not in os.listdir("./datas/config/server")):
-      default = open (f"./datas/config/server/default.json", "r")
       f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "w")
       json.dump (json.load (default), f)
       f.close ()
@@ -49,7 +50,7 @@ class configs (cog_ext):
             break
           
         if (flag == False):
-          await ctx.send ("不對，這個人是誰啊")
+          await ctx.send ("不對，這個人是誰啊，這個伺服器沒有這個人啊")
           return
 
         if ((confs["allow_add_by_admin"] == False) and (ctx.author != ctx.guild.owner)):
@@ -64,7 +65,7 @@ class configs (cog_ext):
             break
           
         if (flag == False):
-          await ctx.send ("不對，這個人是誰啊")
+          await ctx.send ("不對，這個人是誰啊，這個伺服器沒有這個人啊")
           return
 
         if ((confs["allow_add_by_admin"] == False) and (ctx.author != ctx.guild.owner)):
@@ -72,6 +73,12 @@ class configs (cog_ext):
         else:
           confs["admin"].remove (ans)
       elif (key == "set"):
+        if (option not in confs):
+          if (option in default):
+            confs[option] = default[option]
+          else:
+            await ctx.send ("好像沒有這個選項欸")
+
         confs[option] = ans
       else:
         return
