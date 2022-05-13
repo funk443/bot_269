@@ -79,7 +79,7 @@ class events (cog_ext):
     reacts = json.load (f)
     f.close ()
 
-    if (message.content in data):
+    if ((message.content in data) and (message.author.bot == False)):
       if (type (data[message.content]) == list):
         for i in data[message.content]:
           await message.channel.send (i)
