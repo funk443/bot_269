@@ -17,7 +17,7 @@ import random
 from discord.ext import commands
 from core.classes import cog_ext
 
-options = ("大吉", "吉", "小吉", "平", "小凶", "凶", "大凶", "你命由你不由天，自己的幸福自己拼")
+options = ("大吉", "吉", "小吉", "平", "小凶", "凶", "大凶", "你命由你不由天，自己幸福自己拼")
 
 class luck (cog_ext):
   @commands.command ()
