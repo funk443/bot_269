@@ -17,7 +17,6 @@ from discord.ext import commands
 
 intents = discord.Intents.default ()
 intents.members = True
-intents.guilds = True
 activity = discord.Game (name = "GNU Emacs")
 
 f = open ("./TOKEN", "r")
