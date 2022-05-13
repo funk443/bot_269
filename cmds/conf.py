@@ -16,10 +16,73 @@ from discord.ext import commands
 from core.classes import cog_ext
 
 class configs (cog_ext):
-  async def usr_settings (self, ctx):
+  @commands.command ()
+  async def usr_conf (self, ctx):
+    if (f"usr_conf_{ctx.author.id}.json" not in os.listdir("./datas/config/user")):
+      f = open (f"./datas/config/user/usr_conf_{ctx.author.id}.json", "w")
+      json.dump ({}, f)
+      f.close ()
     return
 
-  async def svr_settings (self, ctx):
+  @commands.command ()
+  async def svr_conf (self, ctx, key = None, option = None, ans = None):
+    if (f"svr_conf_{ctx.guild.id}.json" not in os.listdir("./datas/config/server")):
+      default = open (f"./datas/config/server/default.json", "r")
+      f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "w")
+      json.dump (json.load (default), f)
+      f.close ()
+
+    f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "r")
+    confs = json.load (f)
+    f.close ()
+
+    if ((f"<@{ctx.author.id}>" in confs["admin"]) or (ctx.author == ctx.guild.owner)):
+      if (key == None):
+        await ctx.send (confs)
+      elif ((option == None) or (ans == None) or (option not in confs)):
+        await ctx.send ("你好像打錯什麼了")
+      elif ((key == "+") and (option == "admin") and (ans not in confs["admin"])):
+        flag = False
+        for i in ctx.guild.members:
+          if (ans == f"<@{i.id}>"):
+            flag = True
+            break
+          
+        if (flag == False):
+          await ctx.send ("不對，這個人是誰啊")
+          return
+
+        if ((confs["allow_add_by_admin"] == False) and (ctx.author != ctx.guild.owner)):
+          await ctx.send ("你好像不能動這個設定欸")
+        else:
+          confs["admin"].append (ans)
+      elif ((key == "-") and (option == "admin") and (ans in confs["admin"])):
+        flag = False
+        for i in ctx.guild.members:
+          if (ans == f"<@{i.id}>"):
+            flag = True
+            break
+          
+        if (flag == False):
+          await ctx.send ("不對，這個人是誰啊")
+          return
+
+        if ((confs["allow_add_by_admin"] == False) and (ctx.author != ctx.guild.owner)):
+          await ctx.send ("你好像不能動這個設定欸")
+        else:
+          confs["admin"].remove (ans)
+      elif (key == "set"):
+        confs[option] = ans
+      else:
+        return
+
+
+      f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "w")
+      json.dump (confs, f)
+      f.close ()
+        
+    else:
+      await ctx.send ("你是誰啊")
     return
 
 def setup (bot):
