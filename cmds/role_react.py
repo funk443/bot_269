@@ -18,6 +18,14 @@ from core.classes import cog_ext
 class role_react (cog_ext):
   @commands.command ()
   async def role_select (self, ctx, contents, *emojis):
+    if (f"svr_conf_{ctx.guild.id}.json" not in os.listdir ("./datas/config/server")):
+      f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "w")
+      f2 = open (f"./datas/config/server/default.json", "r")
+      default = json.load (f2)
+      f2.close ()
+      json.dump (default, f)
+      f.close ()
+
     if (f"role_select_{ctx.guild.id}.json" not in os.listdir ("./datas/role_select")):
       f = open (f"./datas/role_select/role_select_{ctx.guild.id}.json", "w")
       json.dump ({}, f)
