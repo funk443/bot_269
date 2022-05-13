@@ -107,6 +107,7 @@ class events (cog_ext):
   async def on_command_error (self, ctx, error):
     word = random.choice (conf["wtf"])
     await ctx.reply (f"{word}。這些東西錯了啦: ```{error}```")
+    print (error)
 
 def setup (bot):
   bot.add_cog (events (bot))
