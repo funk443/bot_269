@@ -90,7 +90,6 @@ class configs (cog_ext):
         
     else:
       await ctx.send ("你是誰啊")
-    return
 
 def setup (bot):
   bot.add_cog (configs (bot))
