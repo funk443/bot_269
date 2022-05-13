@@ -18,6 +18,10 @@ from core.classes import cog_ext
 class role_react (cog_ext):
   @commands.command ()
   async def role_select (self, ctx, contents, *emojis):
+    if (f"role_select_{ctx.guild.id}.json" not in os.listdir ("./datas/role_select")):
+      f = open (f"./datas/role_select/role_select_{ctx.guild.id}.json", "w")
+      json.dump ({}, f)
+      f.close ()
 
     f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "r")
     conf = json.load (f)
@@ -26,11 +30,6 @@ class role_react (cog_ext):
     if ((f"<@{ctx.author.id}>" not in conf["admin"]) and (ctx.author != ctx.guild.owner)):
       await ctx.message.delete ()
       return
-
-    if (f"role_select_{ctx.guild.id}.json" not in os.listdir ("./datas/role_select")):
-      f = open (f"./datas/role_select/role_select_{ctx.guild.id}.json", "w")
-      json.dump ({}, f)
-      f.close ()
 
     f = open (f"./datas/role_select/role_select_{ctx.guild.id}.json", "r")
     msgs = json.load (f)
