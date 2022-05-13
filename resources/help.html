@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-13 Fri 15:36 -->
+<!-- 2022-05-13 Fri 22:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>bot_269使用說明</title>
@@ -201,57 +201,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge8db505">1. 幫助指令(help)</a>
-<ul>
-<li><a href="#org230bd64">1.1. 幫助目錄</a></li>
-<li><a href="#org498ede3">1.2. 詳細說明</a></li>
-</ul>
-</li>
-<li><a href="#orgc4c0df2">2. 前綴字(prefix)</a>
-<ul>
-<li><a href="#org061fcae">2.1. 查詢目前前綴字(PREFIX)</a></li>
-<li><a href="#orga9eaa8d">2.2. 更改前綴字(change_prefix)</a></li>
-</ul>
-</li>
-<li><a href="#orgf200c88">3. 回覆指令(reply)</a>
-<ul>
-<li><a href="#orgbb55414">3.1. 新增/修改回覆(add)</a></li>
-<li><a href="#org7e18e56">3.2. 刪除回覆(del)</a></li>
-<li><a href="#org3c77a36">3.3. 尋找關鍵字(findk)</a></li>
-<li><a href="#org886b36c">3.4. 尋找回覆(findv)</a></li>
-<li><a href="#orga2221a0">3.5. 列出所有關鍵字列表(list)</a></li>
-</ul>
-</li>
-<li><a href="#orgcc1fb2b">4. 回應指令(react)</a>
-<ul>
-<li><a href="#orgbd8ec76">4.1. 新增/修改回應(add)</a></li>
-<li><a href="#org685a2ea">4.2. 刪除回覆(del)</a></li>
-<li><a href="#org5efe54f">4.3. 尋找關鍵字(findk)</a></li>
-<li><a href="#orga036dd5">4.4. 尋找回覆(findv)</a></li>
-<li><a href="#orgb6aa328">4.5. 列出所有關鍵字列表(list)</a></li>
-</ul>
-</li>
-<li><a href="#org9ca5457">5. 吃什麼指令</a>
-<ul>
-<li><a href="#org0e09052">5.1. 從預設清單中挑食物</a></li>
-<li><a href="#org9eea8e4">5.2. 新增食物到預設清單(add)</a></li>
-<li><a href="#org1ee1cd1">5.3. 將食物從預設清單中移除(del)</a></li>
-<li><a href="#org319ec4c">5.4. 將預設清單清空(clr)</a></li>
-<li><a href="#org9062518">5.5. 查看預設清單(list)</a></li>
-<li><a href="#org1450d61">5.6. 不使用預設清單挑選食物</a></li>
-</ul>
-</li>
-<li><a href="#org56ca4d6">6. 今日運勢指令</a></li>
+<li><a href="#org64804ed">1. 幫助指令(help)</a></li>
+<li><a href="#orge6d3140">2. 前綴字(prefix)</a></li>
+<li><a href="#org391730e">3. 伺服器設定用指令(svr_conf)</a></li>
+<li><a href="#org3b3dbbf">4. 按表情符號來取得身份組指令(role_select)</a></li>
+<li><a href="#orgd6cc84c">5. 回覆指令(reply)</a></li>
+<li><a href="#orgf1ce48d">6. 回應指令(react)</a></li>
+<li><a href="#org9d8f037">7. 吃什麼指令</a></li>
+<li><a href="#orgbe3ec60">8. 今日運勢指令</a></li>
 </ul>
 </div>
 </div>
 <p>
 <b>預設前綴為a269(欸, 269), 某些伺服器可能有修改過前綴，可以使用( <code>PREFIX</code> )來查詢。</b><br />
-<b>說明書中有and和caret(就是那個向上的箭頭)請忽略，這些是用來做分隔之用，指令中不會有這些符號。</b><br />
+<b>說明書中有and符號請忽略，這些是用來做分隔之用，指令中不會有這些符號。</b><br />
 </p>
 
 <p>
-請使用 <code>a269 help &lt;目錄中的數字(如1或3.2等)&gt;</code> 來看更詳細的說明。<br />
+請使用 <code>a269 help &lt;目錄中的數字(如1, 2, 3等)&gt;</code> 來看更詳細的說明。<br />
 直接在聊天室中輸入 <code>COPYRIGHT</code> 或 <code>LICENSE</code> 來查看版權聲明和授權條款。<br />
 原始碼可以在 <a href="https://github.com/funk443/bot_269">https://github.com/funk443/bot_269</a> 找到。<br />
 </p>
@@ -274,77 +241,93 @@ copyright (C) 2022 CToID<br />
 </p>
 
 
-<div id="outline-container-orge8db505" class="outline-2">
-<h2 id="orge8db505"><span class="section-number-2">1.</span> 幫助指令(help)</h2>
+<div id="outline-container-org64804ed" class="outline-2">
+<h2 id="org64804ed"><span class="section-number-2">1.</span> 幫助指令(help)</h2>
 <div class="outline-text-2" id="text-1">
-</div>
-<div id="outline-container-org230bd64" class="outline-3">
-<h3 id="org230bd64"><span class="section-number-3">1.1.</span> 幫助目錄</h3>
-<div class="outline-text-3" id="text-1-1">
-<p>
-用法: <code>a269 help</code> <br />
+<ul class="org-ul">
+<li><p>
+幫助目錄<br />
+用法: <code>a269 help</code><br />
 </p>
 
 <p>
-召喚說明書的目錄。 ^<br />
-</p>
-</div>
-</div>
-<div id="outline-container-org498ede3" class="outline-3">
-<h3 id="org498ede3"><span class="section-number-3">1.2.</span> 詳細說明</h3>
-<div class="outline-text-3" id="text-1-2">
-<p>
-用法: <code>a269 help &lt;目錄中的數字(可以是1或是2.1等)&gt;</code><br />
-</p>
+召喚說明書的目錄。<br />
+</p></li>
 
-<p>
-如題。 ^<br />
-&amp;<br />
-</p>
+<li>詳細說明<br />
+用法: <code>a269 help &lt;目錄中的數字(1, 2, 3等)&gt;</code><br />
+&amp;<br /></li>
+</ul>
 </div>
 </div>
-</div>
-<div id="outline-container-orgc4c0df2" class="outline-2">
-<h2 id="orgc4c0df2"><span class="section-number-2">2.</span> 前綴字(prefix)</h2>
+<div id="outline-container-orge6d3140" class="outline-2">
+<h2 id="orge6d3140"><span class="section-number-2">2.</span> 前綴字(prefix)</h2>
 <div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-org061fcae" class="outline-3">
-<h3 id="org061fcae"><span class="section-number-3">2.1.</span> 查詢目前前綴字(PREFIX)</h3>
-<div class="outline-text-3" id="text-2-1">
-<p>
+<ul class="org-ul">
+<li><p>
+查詢目前前綴字(PREFIX)<br />
 用法: <code>PREFIX</code><br />
 </p>
 
 <p>
-如題，只要輸入 <code>PREFIX</code> 就好了，不用加任何前綴字。^<br />
-</p>
-</div>
-</div>
-<div id="outline-container-orga9eaa8d" class="outline-3">
-<h3 id="orga9eaa8d"><span class="section-number-3">2.2.</span> 更改前綴字(change_prefix)</h3>
-<div class="outline-text-3" id="text-2-2">
-<p>
-用法: <code>a269 change_prefix &lt;要改成什麼前綴字&gt;</code><br />
-</p>
+如題，只要輸入 <code>PREFIX</code> 就好了，不用加任何前綴字。<br />
+</p></li>
 
-<p>
+<li>更改前綴字(change_prefix)<br />
+用法: <code>a269 change_prefix &lt;要改成什麼前綴字&gt;</code><br />
 可以將機器人在這個伺服器的前綴字更改成你想要的字串。<br />
 <b>建議把想更改的前綴字用雙引號(")包起來，以免空白被吃</b><br />
 <b>後面要空格要自己加喔</b><br />
-<b>如果要更改的內容為空，機器人會改回預設前綴字(​a269 )</b> ^<br />
+<b>如果要更改的內容為空，機器人會改回預設前綴字(​a269 )</b>  <br />
+&amp;<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org391730e" class="outline-2">
+<h2 id="org391730e"><span class="section-number-2">3.</span> 伺服器設定用指令(svr_conf)</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<b>只有伺服器擁有者或管理員可用</b><br />
+</p>
+
+<ul class="org-ul">
+<li>查看目前設定值<br />
+用法: <code>a269 svr_conf</code><br /></li>
+
+<li>增加管理員<br />
+用法: <code>a269 svr_conf + admin &lt;@使用者&gt;</code><br /></li>
+
+<li>刪除管理員<br />
+用法: <code>a269 svr_conf - admin &lt;@使用者&gt;</code><br /></li>
+
+<li>管理員是否能再增加/刪除管理員<br />
+用法: <code>a269 svr_conf set allow_add_by_admin true/false</code><br />
+&amp;<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3b3dbbf" class="outline-2">
+<h2 id="org3b3dbbf"><span class="section-number-2">4.</span> 按表情符號來取得身份組指令(role_select)</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<b>只有伺服器擁有者或管理員可用</b><br />
+</p>
+
+<p>
+用法: <code>a269 role_select "&lt;訊息內容&gt;" "&lt;表情符號1&gt;:&lt;@身份組1&gt;, &lt;@身份組2&gt;, ...." "&lt;表情符號2&gt;:&lt;@身份組1&gt;, &lt;@身份組2&gt;, ..." ...</code><br />
+</p>
+
+<p>
 &amp;<br />
 </p>
 </div>
 </div>
-</div>
-<div id="outline-container-orgf200c88" class="outline-2">
-<h2 id="orgf200c88"><span class="section-number-2">3.</span> 回覆指令(reply)</h2>
-<div class="outline-text-2" id="text-3">
-</div>
-<div id="outline-container-orgbb55414" class="outline-3">
-<h3 id="orgbb55414"><span class="section-number-3">3.1.</span> 新增/修改回覆(add)</h3>
-<div class="outline-text-3" id="text-3-1">
-<p>
+<div id="outline-container-orgd6cc84c" class="outline-2">
+<h2 id="orgd6cc84c"><span class="section-number-2">5.</span> 回覆指令(reply)</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li><p>
+新增/修改回覆(add)<br />
 用法1: <code>a269 reply add &lt;觸發關鍵字&gt; &lt;回覆內容&gt;</code><br />
 用法2: <code>a269 reply add &lt;觸發關鍵字&gt;</code><br />
 </p>
@@ -352,182 +335,145 @@ copyright (C) 2022 CToID<br />
 <p>
 用來新增想要的回覆，如果關鍵字已存在則修改該關鍵字的回覆內容。<br />
 如果回覆內容或關鍵字有含空格，應以雙引號(")包起來。<br />
-用法2可以附加多張圖片來讓機器人回覆圖片。 ^<br />
-</p>
-</div>
-</div>
-<div id="outline-container-org7e18e56" class="outline-3">
-<h3 id="org7e18e56"><span class="section-number-3">3.2.</span> 刪除回覆(del)</h3>
-<div class="outline-text-3" id="text-3-2">
-<p>
+用法2可以附加多張圖片來讓機器人回覆圖片。<br />
+</p></li>
+
+<li><p>
+刪除回覆(del)<br />
 用法: <code>a269 reply del &lt;觸發關鍵字&gt;</code> <br />
 </p>
 
 <p>
-用來刪除在資料庫中的回覆。 ^<br />
-</p>
-</div>
-</div>
-<div id="outline-container-org3c77a36" class="outline-3">
-<h3 id="org3c77a36"><span class="section-number-3">3.3.</span> 尋找關鍵字(findk)</h3>
-<div class="outline-text-3" id="text-3-3">
-<p>
+用來刪除在資料庫中的回覆。<br />
+</p></li>
+
+<li><p>
+尋找關鍵字(findk)<br />
 用法: <code>a269 reply findk &lt;回覆內容&gt;</code> <br />
 </p>
 
 <p>
-用回覆來反查關鍵字。 ^<br />
-</p>
-</div>
-</div>
-<div id="outline-container-org886b36c" class="outline-3">
-<h3 id="org886b36c"><span class="section-number-3">3.4.</span> 尋找回覆(findv)</h3>
-<div class="outline-text-3" id="text-3-4">
-<p>
+用回覆來反查關鍵字。<br />
+</p></li>
+
+<li><p>
+尋找回覆(findv)<br />
 用法: <code>a269 reply findv &lt;觸發關鍵字&gt;</code> <br />
 </p>
 
 <p>
-用關鍵字來找回覆。 ^<br />
-</p>
+用關鍵字來找回覆。<br />
+</p></li>
+
+<li>列出所有關鍵字列表(list)<br />
+用法: <code>a269 reply list</code>  <br />
+&amp;<br /></li>
+</ul>
 </div>
 </div>
-<div id="outline-container-orga2221a0" class="outline-3">
-<h3 id="orga2221a0"><span class="section-number-3">3.5.</span> 列出所有關鍵字列表(list)</h3>
-<div class="outline-text-3" id="text-3-5">
-<p>
-用法: <code>a269 reply list</code> ^<br />
-&amp;<br />
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-orgcc1fb2b" class="outline-2">
-<h2 id="orgcc1fb2b"><span class="section-number-2">4.</span> 回應指令(react)</h2>
-<div class="outline-text-2" id="text-4">
-</div>
-<div id="outline-container-orgbd8ec76" class="outline-3">
-<h3 id="orgbd8ec76"><span class="section-number-3">4.1.</span> 新增/修改回應(add)</h3>
-<div class="outline-text-3" id="text-4-1">
-<p>
+<div id="outline-container-orgf1ce48d" class="outline-2">
+<h2 id="orgf1ce48d"><span class="section-number-2">6.</span> 回應指令(react)</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li><p>
+新增/修改回應(add)<br />
 用法: <code>a269 react add &lt;觸發關鍵字&gt; &lt;要回應的表符1&gt; &lt;要回應的表符2&gt;...(表符間可以用空格格開，也可以不用)</code><br />
 </p>
 
 <p>
-用來新增想要的回應，如果關鍵字已存在則修改該關鍵字的回應表符。^<br />
-</p>
-</div>
-</div>
-<div id="outline-container-org685a2ea" class="outline-3">
-<h3 id="org685a2ea"><span class="section-number-3">4.2.</span> 刪除回覆(del)</h3>
-<div class="outline-text-3" id="text-4-2">
-<p>
+用來新增想要的回應，如果關鍵字已存在則修改該關鍵字的回應表符。<br />
+</p></li>
+
+<li><p>
+刪除回覆(del)<br />
 用法: <code>a269 reply del &lt;觸發關鍵字&gt;</code> <br />
 </p>
 
 <p>
-用來刪除在資料庫中的回應。 ^<br />
-</p>
-</div>
-</div>
-<div id="outline-container-org5efe54f" class="outline-3">
-<h3 id="org5efe54f"><span class="section-number-3">4.3.</span> 尋找關鍵字(findk)</h3>
-<div class="outline-text-3" id="text-4-3">
-<p>
+用來刪除在資料庫中的回應。<br />
+</p></li>
+
+<li><p>
+尋找關鍵字(findk)<br />
 用法: <code>a269 reply findk &lt;回應表符&gt;</code> <br />
 </p>
 
 <p>
-用回應來反查關鍵字。 ^<br />
-</p>
-</div>
-</div>
-<div id="outline-container-orga036dd5" class="outline-3">
-<h3 id="orga036dd5"><span class="section-number-3">4.4.</span> 尋找回覆(findv)</h3>
-<div class="outline-text-3" id="text-4-4">
-<p>
+用回應來反查關鍵字。<br />
+</p></li>
+
+<li><p>
+尋找回覆(findv)<br />
 用法: <code>a269 reply findv &lt;觸發關鍵字&gt;</code> <br />
 </p>
 
 <p>
-用關鍵字來找回應。 ^<br />
-</p>
+用關鍵字來找回應。<br />
+</p></li>
+
+<li>列出所有關鍵字列表(list)<br />
+用法: <code>a269 reply list</code>  <br />
+&amp;<br /></li>
+</ul>
 </div>
 </div>
-<div id="outline-container-orgb6aa328" class="outline-3">
-<h3 id="orgb6aa328"><span class="section-number-3">4.5.</span> 列出所有關鍵字列表(list)</h3>
-<div class="outline-text-3" id="text-4-5">
+<div id="outline-container-org9d8f037" class="outline-2">
+<h2 id="org9d8f037"><span class="section-number-2">7.</span> 吃什麼指令</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>從預設清單中挑食物<br /></li>
+</ul>
 <p>
-用法: <code>a269 reply list</code> ^<br />
+用法: <code>a269 吃什麼</code> <br />
+</p>
+
+<ul class="org-ul">
+<li>新增食物到預設清單(add)<br /></li>
+</ul>
+<p>
+用法: <code>a269 吃什麼 add &lt;食物1&gt; &lt;食物2&gt;....(食物間以空白隔開)</code> <br />
+</p>
+
+<ul class="org-ul">
+<li>將食物從預設清單中移除(del)<br /></li>
+</ul>
+<p>
+用法: <code>a269 吃什麼 del &lt;食物1&gt; &lt;食物2&gt;....(食物間以空白隔開)</code><br />
+</p>
+
+<ul class="org-ul">
+<li>將預設清單清空(clr)<br /></li>
+</ul>
+<p>
+用法: <code>a269 吃什麼 clr</code><br />
+</p>
+
+<ul class="org-ul">
+<li>查看預設清單(list)<br /></li>
+</ul>
+<p>
+用法: <code>a269 吃什麼 list</code><br />
+</p>
+
+<ul class="org-ul">
+<li>不使用預設清單挑選食物<br /></li>
+</ul>
+<p>
+用法: <code>a269 吃什麼 &lt;食物1&gt; &lt;食物2&gt;....(食物間以空白隔開)</code><br />
 &amp;<br />
 </p>
 </div>
 </div>
-</div>
-<div id="outline-container-org9ca5457" class="outline-2">
-<h2 id="org9ca5457"><span class="section-number-2">5.</span> 吃什麼指令</h2>
-<div class="outline-text-2" id="text-5">
-</div>
-<div id="outline-container-org0e09052" class="outline-3">
-<h3 id="org0e09052"><span class="section-number-3">5.1.</span> 從預設清單中挑食物</h3>
-<div class="outline-text-3" id="text-5-1">
-<p>
-用法: <code>a269 吃什麼</code> ^<br />
-</p>
-</div>
-</div>
-<div id="outline-container-org9eea8e4" class="outline-3">
-<h3 id="org9eea8e4"><span class="section-number-3">5.2.</span> 新增食物到預設清單(add)</h3>
-<div class="outline-text-3" id="text-5-2">
-<p>
-用法: <code>a269 吃什麼 add &lt;食物1&gt; &lt;食物2&gt;....(食物間以空白隔開)</code> ^<br />
-</p>
-</div>
-</div>
-<div id="outline-container-org1ee1cd1" class="outline-3">
-<h3 id="org1ee1cd1"><span class="section-number-3">5.3.</span> 將食物從預設清單中移除(del)</h3>
-<div class="outline-text-3" id="text-5-3">
-<p>
-用法: <code>a269 吃什麼 del &lt;食物1&gt; &lt;食物2&gt;....(食物間以空白隔開)</code> ^<br />
-</p>
-</div>
-</div>
-<div id="outline-container-org319ec4c" class="outline-3">
-<h3 id="org319ec4c"><span class="section-number-3">5.4.</span> 將預設清單清空(clr)</h3>
-<div class="outline-text-3" id="text-5-4">
-<p>
-用法: <code>a269 吃什麼 clr</code> ^<br />
-</p>
-</div>
-</div>
-<div id="outline-container-org9062518" class="outline-3">
-<h3 id="org9062518"><span class="section-number-3">5.5.</span> 查看預設清單(list)</h3>
-<div class="outline-text-3" id="text-5-5">
-<p>
-用法: <code>a269 吃什麼 list</code> ^<br />
-</p>
-</div>
-</div>
-<div id="outline-container-org1450d61" class="outline-3">
-<h3 id="org1450d61"><span class="section-number-3">5.6.</span> 不使用預設清單挑選食物</h3>
-<div class="outline-text-3" id="text-5-6">
-<p>
-用法: <code>a269 吃什麼 &lt;食物1&gt; &lt;食物2&gt;....(食物間以空白隔開)</code> ^<br />
-&amp;<br />
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org56ca4d6" class="outline-2">
-<h2 id="org56ca4d6"><span class="section-number-2">6.</span> 今日運勢指令</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-orgbe3ec60" class="outline-2">
+<h2 id="orgbe3ec60"><span class="section-number-2">8.</span> 今日運勢指令</h2>
+<div class="outline-text-2" id="text-8">
 <p>
 用法: <code>a269 今日運勢</code><br />
 </p>
 
 <p>
 讓機器人告訴你你今天運氣怎麼樣。一天只能用一次。<br />
-用超過一次的話機器人會罵你喔。^<br />
+用超過一次的話機器人會罵你喔。<br />
 &amp;<br />
 </p>
 </div>
@@ -535,7 +481,7 @@ copyright (C) 2022 CToID<br />
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: CToID(269)</p>
-<p class="date">Created: 2022-05-13 Fri 15:36</p>
+<p class="date">Created: 2022-05-13 Fri 22:24</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
