@@ -14,8 +14,9 @@ import os
 import json
 from discord.ext import commands
 from core.classes import cog_ext
+from cmds.go_live import go_live
 
-class configs (cog_ext):
+class configs (go_live):
   @commands.command ()
   async def usr_conf (self, ctx):
     if (f"usr_conf_{ctx.author.id}.json" not in os.listdir("./datas/config/user")):
@@ -26,7 +27,9 @@ class configs (cog_ext):
 
   @commands.command ()
   async def svr_conf (self, ctx, key = None, option = None, ans = None):
-    default = open (f"./datas/config/server/default.json", "r")
+    f = open (f"./datas/config/server/default.json", "r")
+    default = json.load (f)
+    f.close ()
 
     if (f"svr_conf_{ctx.guild.id}.json" not in os.listdir("./datas/config/server")):
       f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "w")
@@ -37,10 +40,13 @@ class configs (cog_ext):
     confs = json.load (f)
     f.close ()
 
+    diff = {k:default[k] for k  in set (default) - set (confs)}
+    confs = diff | confs
+
     if ((f"<@{ctx.author.id}>" in confs["admin"]) or (ctx.author == ctx.guild.owner)):
       if (key == None):
-        await ctx.send (confs)
-      elif ((option == None) or (ans == None) or (option not in confs)):
+        await ctx.send (f"`{confs}`")
+      elif ((option == None) or (ans == None)):
         await ctx.send ("你好像打錯什麼了")
       elif ((key == "+") and (option == "admin") and (ans not in confs["admin"])):
         flag = False
@@ -73,21 +79,44 @@ class configs (cog_ext):
         else:
           confs["admin"].remove (ans)
       elif (key == "set"):
-        if (option not in confs):
-          if (option in default):
-            confs[option] = default[option]
-          else:
-            await ctx.send ("好像沒有這個選項欸")
+        if (option == "admin"):
+          await ctx.send ("這個不是用set啦")
+          return
 
-        confs[option] = ans
+        if ((option == "allow_add_by_admin") and (ans not in ["true", "false"])):
+          await ctx.send ("你大概打錯什麼東西了")
+        elif (option == "twitch_name"):
+          ans = ans.split (",")
+
+          confs[option] = ans
+        elif (option == "twitch_noti_chan"):
+          confs[option] = ans[2:-1]
+        else:
+          confs[option] = ans
       else:
         return
+        
+      if ((confs["twitch_name"] != []) and (confs["twitch_noti_chan"] != "") and (not go_live.check_live.is_running ())):
+        stat = []
+        for i in confs["twitch_name"]:
+          stat.append (False)
+          
+        go_live.check_live.start (self, confs["twitch_name"], confs["twitch_noti_chan"], stat, confs["twitch_noti_text"])
+      elif ((confs["twitch_name"] != []) and (confs["twitch_noti_chan"] != "") and (go_live.check_live.isrunning ())):
+        go_live.check_live.stop ()
+        stat = []
+        for i in confs["twitch_name"]:
+          stat.append (False)
+          
+        go_live.check_live.start (self, confs["twitch_name"], confs["twitch_noti_chan"], stat, confs["twitch_noti_text"])
+      else:
+        go_live.check_live.stop ()
 
 
       f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "w")
       json.dump (confs, f)
       f.close ()
-        
+
     else:
       await ctx.send ("你是誰啊")
 

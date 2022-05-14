@@ -14,6 +14,7 @@ import discord
 import json
 import os
 from discord.ext import commands
+from cmds.go_live import go_live
 
 intents = discord.Intents.default ()
 intents.members = True

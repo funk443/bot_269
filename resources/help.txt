@@ -82,6 +82,22 @@ copyright (C) 2022 CToID
 
   • 管理員是否能再增加/刪除管理員
     用法: `a269 svr_conf set allow_add_by_admin true/false'
+
+  • 要跟隨的twitch id
+    用法: `a269 svr_conf set twitch_name <id1>,<id2>,<id3>,<id4>,....'
+
+    機器人會在這些人開台的時候傳送通知道指定頻道。
+
+  • twitch開台通知要發在哪個頻道
+    用法: `a269 svr_conf set twitch_noti_chan <#頻道>'
+
+    指定開台通知傳送的頻道，沒有設定這項不會發通知。
+
+  • twitch開台通知內容
+    用法: `a269 svr_conf set twitch_noti_text "<內容>"'
+
+    傳送通知的內容
+
     &
 
 
@@ -94,6 +110,7 @@ copyright (C) 2022 CToID
   2>, ...." "<表情符號2>/<@身份組1>, <@身份組2>, ..." ...'
 
   *雙引號(")跟斜線(/)都要記得照上面的格式輸入*
+  在訊息內容的雙引號內，可以用shift+enter換行，也可以使用表符。
   在哪個頻道輸入這個指令，他訊息就會傳到那個頻道。
   &
 
