@@ -84,7 +84,8 @@ copyright (C) 2022 CToID
     用法: `a269 svr_conf set allow_add_by_admin true/false'
 
   • 要跟隨的twitch id
-    用法: `a269 svr_conf set twitch_name <id1>,<id2>,<id3>,<id4>,....'
+    用法: `a269 svr_conf set twitch_name <Twitch帳號1>,<twitch帳號
+    2>,<twitch帳號3>,...'
 
     機器人會在這些人開台的時候傳送通知道指定頻道。
 
