@@ -96,7 +96,7 @@ copyright (C) 2022 CToID
   • twitch開台通知內容
     用法: `a269 svr_conf set twitch_noti_text "<內容>"'
 
-    傳送通知的內容
+    傳送通知的內容，機器人會自動在訊息的最後加上頻道網址。
 
     &
 
