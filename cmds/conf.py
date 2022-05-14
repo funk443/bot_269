@@ -83,7 +83,7 @@ class configs (go_live):
           await ctx.send ("這個不是用set啦")
           return
 
-        if ((option == "allow_add_by_admin") and (ans not in ["true", "false"])):
+        if (((option == "twitch_embed") or (option == "allow_add_by_admin")) and (ans not in ["true", "false"])):
           await ctx.send ("你大概打錯什麼東西了")
         elif (option == "twitch_name"):
           ans = ans.split (",")
@@ -101,14 +101,14 @@ class configs (go_live):
         for i in confs["twitch_name"]:
           stat.append (False)
           
-        go_live.check_live.start (self, confs["twitch_name"], confs["twitch_noti_chan"], stat, confs["twitch_noti_text"])
-      elif ((confs["twitch_name"] != []) and (confs["twitch_noti_chan"] != "") and (go_live.check_live.isrunning ())):
+        go_live.check_live.start (self, confs["twitch_name"], confs["twitch_noti_chan"], stat, confs["twitch_noti_text"], confs["twitch_embed"])
+      elif ((confs["twitch_name"] != []) and (confs["twitch_noti_chan"] != "") and (go_live.check_live.is_running ())):
         go_live.check_live.stop ()
         stat = []
         for i in confs["twitch_name"]:
           stat.append (False)
           
-        go_live.check_live.start (self, confs["twitch_name"], confs["twitch_noti_chan"], stat, confs["twitch_noti_text"])
+        go_live.check_live.start (self, confs["twitch_name"], confs["twitch_noti_chan"], stat, confs["twitch_noti_text"], confs["twitch_embed"])
       else:
         go_live.check_live.stop ()
 

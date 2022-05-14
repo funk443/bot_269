@@ -23,11 +23,12 @@ twitch = Twitch(tch["key"], tch["secret"])
 
 class go_live (cog_ext):
   @tasks.loop (minutes = 1)
-  async def check_live (self, users, chan, stat, content):
+  async def check_live (self, users, chan, stat, content, ebd):
     last_stat = stat.copy ()
     data = twitch.get_streams (user_login = users)["data"]
+    # print (data)
     on_usrs = []
-    # print (users)
+    # print (type (ebd))
 
     for i in data:
       if (i["user_login"] in users):
@@ -45,8 +46,21 @@ class go_live (cog_ext):
       if ((stat[i] == True) and (last_stat[i] == False)):
         go_live_usr.append (users[i])
         usr = users[i]
+        data_index = on_usrs.index (users [i])
         chan = self.bot.get_channel (int (chan))
-        await chan.send (f"{content} https://www.twitch.tv/{usr}")
+        usr_info = twitch.get_users (logins = [users[i]])["data"][0]
+        # print (usr_info)
+        if (ebd):
+          embed = discord.Embed (title = data[data_index]["title"], description = f"{data[data_index]['user_name']} 在圖奇開台了!",
+                                 url = f"https://www.twitch.tv/{usr}")
+          embed.set_author (name = data[data_index]["user_name"], url = f"https://www.twitch.tv/{usr}",
+                            icon_url = usr_info["profile_image_url"])
+          embed.add_field (name = "正在玩", value = data[data_index]["game_name"])
+          embed.set_image (url = data[data_index]["thumbnail_url"].replace ("{width}", "1920").replace ("{height}", "1080"))
+          embed.set_footer (text = "Twitch", icon_url = "https://cdn-icons-png.flaticon.com/512/5968/5968819.png")
+          await chan.send (content = f"{content} https://www.twitch.tv/{usr}", embed = embed)
+        else:
+          await chan.send (content = f"{content} https://www.twitch.tv/{usr}")
 
     # print (on_usrs)
     # print (off_usrs)
