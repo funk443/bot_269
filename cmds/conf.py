@@ -103,12 +103,11 @@ class configs (go_live):
           
         go_live.check_live.start (self, confs["twitch_name"], confs["twitch_noti_chan"], stat, confs["twitch_noti_text"], confs["twitch_embed"])
       elif ((confs["twitch_name"] != []) and (confs["twitch_noti_chan"] != "") and (go_live.check_live.is_running ())):
-        go_live.check_live.stop ()
         stat = []
         for i in confs["twitch_name"]:
           stat.append (False)
           
-        go_live.check_live.start (self, confs["twitch_name"], confs["twitch_noti_chan"], stat, confs["twitch_noti_text"], confs["twitch_embed"])
+        go_live.check_live.restart (self, confs["twitch_name"], confs["twitch_noti_chan"], stat, confs["twitch_noti_text"], confs["twitch_embed"])
       else:
         go_live.check_live.stop ()
 
