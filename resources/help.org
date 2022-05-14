@@ -15,7 +15,7 @@
 - e-mail: funk443@tutanota.com
 - 巴哈: CToID(funk443)
 
-copyright (C) 2022 CToID
+Copyright (C) 2022 CToID
 
 &
 
@@ -71,6 +71,9 @@ copyright (C) 2022 CToID
   用法: ~a269 svr_conf set twitch_noti_text "<內容>"~
 
   傳送通知的內容，機器人會自動在訊息的最後加上頻道網址。
+
+- twitch開台通知是否要用discord嵌入訊息
+  用法: ~a269 svr_conf set twitch_embed true/false~
 
   & 
 * 按表情符號來取得身份組指令(role_select)
