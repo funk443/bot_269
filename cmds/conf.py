@@ -16,6 +16,7 @@ from discord.ext import commands
 from core.classes import cog_ext
 from cmds.go_live import go_live
 
+
 class configs (go_live):
   @commands.command ()
   async def usr_conf (self, ctx):
@@ -95,26 +96,39 @@ class configs (go_live):
           confs[option] = ans
       else:
         return
-        
-      if ((confs["twitch_name"] != []) and (confs["twitch_noti_chan"] != "") and (not go_live.check_live.is_running ())):
-        stat = []
-        for i in confs["twitch_name"]:
-          stat.append (False)
-          
-        go_live.check_live.start (self, confs["twitch_name"], confs["twitch_noti_chan"], stat, confs["twitch_noti_text"], confs["twitch_embed"])
-      elif ((confs["twitch_name"] != []) and (confs["twitch_noti_chan"] != "") and (go_live.check_live.is_running ())):
-        stat = []
-        for i in confs["twitch_name"]:
-          stat.append (False)
-          
-        go_live.check_live.restart (self, confs["twitch_name"], confs["twitch_noti_chan"], stat, confs["twitch_noti_text"], confs["twitch_embed"])
-      else:
-        go_live.check_live.stop ()
-
 
       f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "w")
       json.dump (confs, f)
       f.close ()
+
+      twitch_names = []
+      twitch_chan = []
+      twitch_stat = []
+      twitch_content = []
+      twitch_ebd = []
+      files_list = os.listdir ("datas/config/server")
+      files_list.remove ("a")
+      files_list.remove ("default.json")
+      for i in files_list:
+        f = open (f"datas/config/server/{i}", "r")
+        svr_conf = json.load (f)
+        f.close ()
+        stat = []
+      
+        twitch_names.append (svr_conf["twitch_name"])
+        twitch_chan.append (svr_conf["twitch_noti_chan"])
+        for j in svr_conf["twitch_name"]:
+          stat.append (False)
+      
+        twitch_stat.append (stat)
+        twitch_content.append (svr_conf["twitch_noti_text"])
+        twitch_ebd.append (svr_conf["twitch_embed"])
+        
+      if ((confs["twitch_name"] != []) and (confs["twitch_noti_chan"] != "") and
+          (key != None) and (option == "twitch_name")):
+        go_live.check_live.cancel ()
+        go_live.check_live.start (self, users = twitch_names, chan = twitch_chan, stat = twitch_stat,
+                                  content = twitch_content, ebd = twitch_ebd)
 
     else:
       await ctx.send ("你是誰啊")
