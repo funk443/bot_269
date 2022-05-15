@@ -57,6 +57,13 @@ class events (cog_ext):
       f.close ()
       await message.channel.send (f"```{lic}```")
 
+    if ("CREDIT" == message.content):
+      f = open ("credits.txt", "r")
+      credit = f.read ()
+      f.close ()
+
+      await message.channel.send (f"`{credit}`")
+
     if ((message.author.id == 159985870458322944) and (message.author.bot == True)
         and ("484要制裁一下" in message.content)):
       await message.reply ("閉嘴好不好")
