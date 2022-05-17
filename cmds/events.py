@@ -1,5 +1,5 @@
 """
-Copyright (C) 2022 CToID
+  Copyright (C) 2022 CToID
 
   This file is part of bot_269.
 
@@ -48,8 +48,12 @@ class events (cog_ext):
 
       await message.channel.send (f'現在的前綴字是"`{pref}`"')
 
+    if ("LICENSE_zh" == message.content):
+      content = """ >>> **請注意，這份GNU Affero General Public License中文譯本僅供參考，一切內容以Free Software Foundation發布之原版GNU Affero General Public License為準。 詳見<https://www.gnu.org/licenses/agpl-3.0.html>**"""
+      await message.channel.send (content = content, file = discord.File ("./resources/AGPL_zh_TW.txt"))
+
     if ("LICENSE" == message.content):
-      await message.channel.send (file = discord.File ("LICENSE.txt"))
+      await message.channel.send (file = discord.File ("./resources/LICENSE.txt"))
 
     if ("COPYRIGHT" == message.content):
       f = open ("./resources/license_notice", "r")

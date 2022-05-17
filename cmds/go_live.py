@@ -1,5 +1,5 @@
 """
-Copyright (C) 2022 CToID
+  Copyright (C) 2022 CToID
 
   This file is part of bot_269.
 

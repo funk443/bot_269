@@ -1,5 +1,5 @@
 """
-Copyright (C) 2022 CToID
+  Copyright (C) 2022 CToID
 
   This file is part of bot_269.
 
@@ -9,12 +9,10 @@ Copyright (C) 2022 CToID
 
   You should have received a copy of the GNU Affero General Public License along with bot_269. If not, see <https://www.gnu.org/licenses/agpl-3.0.html>.
 """
-
 import discord
 import json
 import os
 from discord.ext import commands
-from cmds.go_live import go_live
 
 intents = discord.Intents.default ()
 intents.members = True
@@ -31,6 +29,11 @@ f.close ()
 f = open ("prefixes.json", "r")
 pfs = json.load (f)
 f.close ()
+# print (twitch_names)
+# print (twitch_chan)
+# print (twitch_stat)
+# print (twitch_content)
+# print (twitch_emd)
 
 async def get_prefix (bot, ctx):
   if (str (ctx.guild.id) not in pfs):
@@ -43,17 +46,6 @@ bot = commands.Bot (command_prefix = get_prefix, intents = intents, activity = a
 @bot.event
 async def on_ready ():
   print ("Up")
-
-# @bot.command ()
-# async def copyright (ctx):
-#   f = open ("./resources/license_notice", "r")
-#   lic = f.read ()
-#   f.close ()
-#   await ctx.send (f"```{lic}```")
-
-# @bot.command ()
-# async def license (ctx):
-#   await ctx.send (file = discord.File ("LICENSE.txt"))
 
 @bot.command ()
 async def change_prefix (ctx, npf = None):
@@ -74,3 +66,4 @@ for fn in os.listdir ("./cmds"):
 
 if (__name__ == "__main__"):
   bot.run(str (TOKEN))
+

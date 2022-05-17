@@ -1,5 +1,5 @@
 """
-Copyright (C) 2022 CToID
+  Copyright (C) 2022 CToID
 
   This file is part of bot_269.
 
@@ -124,8 +124,7 @@ class configs (go_live):
         twitch_content.append (svr_conf["twitch_noti_text"])
         twitch_ebd.append (svr_conf["twitch_embed"])
         
-      if ((confs["twitch_name"] != []) and (confs["twitch_noti_chan"] != "") and
-          (key != None) and (option == "twitch_name")):
+      if ((key != None) and ((option == "twitch_name") or (option == "twitch_noti_chan"))):
         go_live.check_live.cancel ()
         go_live.check_live.start (self, users = twitch_names, chan = twitch_chan, stat = twitch_stat,
                                   content = twitch_content, ebd = twitch_ebd)
