@@ -47,6 +47,8 @@ class configs (go_live):
     if ((f"<@{ctx.author.id}>" in confs["admin"]) or (ctx.author == ctx.guild.owner)):
       if (key == None):
         await ctx.send (f"`{confs}`")
+      elif ((key == "clr") and (option == "twitch_name")):
+        confs[option] = []
       elif ((option == None) or (ans == None)):
         await ctx.send ("你好像打錯什麼了")
       elif ((key == "+") and (option == "admin") and (ans not in confs["admin"])):

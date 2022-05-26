@@ -34,6 +34,9 @@ for i in files_list:
   f.close ()
   stat = []
 
+  if (svr_conf["twitch_name"] == []):
+    continue
+  
   twitch_names.append (svr_conf["twitch_name"])
   twitch_chan.append (svr_conf["twitch_noti_chan"])
   for j in svr_conf["twitch_name"]:
