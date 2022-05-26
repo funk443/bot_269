@@ -92,8 +92,11 @@ class reply (cog_ext):
                              
     elif (key == "list"):
       if (len (data) != 0):
+        s = ""
         for i in data:
-          await ctx.send (f"`{i}:{data[i]}`")
+          s = s + f"{i}:{data[i]}\n"
+
+        await ctx.send (f"```{s}```")
       else:
         await ctx.send ("竟然一個東西都沒有")
           
