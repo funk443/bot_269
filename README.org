@@ -29,6 +29,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   - [[#下載檔案][下載檔案]]
   - [[#設定環境][設定環境]]
   - [[#設定discord開發者環境和金鑰][設定Discord開發者環境和金鑰]]
+  - [[#設定twitch應用程式][設定twitch應用程式]]
   - [[#啟動你的機器人吧][啟動你的機器人吧]]
 - [[#連絡方式][連絡方式]]
 
@@ -152,6 +153,16 @@ git clone https://github.com/funk443/bot_269.git
 
 2. 複製所產出網址就是邀請機器人的網址了
 
+** 設定twitch應用程式
+1. 前往[[https://dev.twitch.tv][Twitch開發者頁面]]，並從右上角登入
+
+2. 登入後按右上角Your Console按鈕
+
+3. 點選註冊您的應用程式，並輸入名稱，選擇分類。OAuth重新導向網址請填 =http://localhost=
+
+4. 到剛剛註冊的應用程式頁面，按下新密碼按鈕。並分別將用戶端ID和用戶端密碼複製到bot_269目錄下twitch.json中
+   ID複製到key後面的雙引號，密碼複製到secret後面的雙引號內
+
 ** 啟動你的機器人吧
 1. 打開你的終端機/命令提示字元(cmd)，並cd到bot_269的目錄中
 
@@ -169,6 +180,8 @@ git clone https://github.com/funk443/bot_269.git
 3. 完成， *記得不可以關閉終端機/命令提示字元(cmd)的視窗!*
 
 * 連絡方式
+如果有任何問題歡迎連絡我
+
 - Discord: ID#2120
 - e-mail: funk443@tutanota.com
 - 巴哈: CToID(funk443)
