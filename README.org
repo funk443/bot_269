@@ -30,6 +30,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   - [[#設定環境][設定環境]]
   - [[#設定discord開發者環境和金鑰][設定Discord開發者環境和金鑰]]
   - [[#啟動你的機器人吧][啟動你的機器人吧]]
+- [[#連絡方式][連絡方式]]
 
 * 主要功能
 *(對我用白色主題，不然你想怎樣)*
@@ -165,4 +166,9 @@ git clone https://github.com/funk443/bot_269.git
      py bot.py
      #+end_src
 
-3. 完成，記得不可以關閉終端機/命令提示字元(cmd)的視窗!
+3. 完成， *記得不可以關閉終端機/命令提示字元(cmd)的視窗!*
+
+* 連絡方式
+- Discord: ID#2120
+- e-mail: funk443@tutanota.com
+- 巴哈: CToID(funk443)
