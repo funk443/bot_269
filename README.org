@@ -1,3 +1,52 @@
-#+TITLE: Bot_269
+#+TITLE: Bot_269 - 自由的Discord機器人
 #+AUTHOR: CToID
 #+OPTIONS: num:nil
+
+Copyright (C) 2022 CToID
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+* 目錄                                                                  :TOC:
+- [[#主要功能][主要功能]]
+  - [[#回覆指定的訊息內容][回覆指定的訊息內容]]
+  - [[#為指定的訊息內容加入回應][為指定的訊息內容加入回應]]
+  - [[#幫你決定要吃什麼][幫你決定要吃什麼]]
+  - [[#今日運勢][今日運勢]]
+  - [[#twitch開台通知][Twitch開台通知]]
+  - [[#自動給成員身份組][自動給成員身份組]]
+
+* 主要功能
+** 回覆指定的訊息內容
+你可以設定特定的訊息內容讓bot_269來回覆。
+[[./images/reply.gif]]
+
+** 為指定的訊息內容加入回應
+你也可以設定讓bot_269對指定訊息加上回應。
+[[./images/react.gif]]
+
+** 幫你決定要吃什麼
+想不到要吃什麼嗎？Bot_269幫你決定。
+[[./images/eat.gif]]
+
+** 今日運勢
+想知道今天會不會過的順利嗎？Bot_269告訴你。
+[[./images/luck.gif]]
+
+** Twitch開台通知
+讓Bot_269在你最愛的實況主開台的時候通知你。
+[[./images/twitch.gif]]
+
+** 自動給成員身份組
+伺服器成員可以通過按下回應的表情符號來取得特定身份組。
+[[./images/role.gif]]

@@ -94,6 +94,9 @@ Copyright (C) 2022 CToID
 
     機器人會在這些人開台的時候傳送通知道指定頻道。
 
+  • 清除twitch id清單
+    用法: `a269 svr_conf clr twitch_name'
+
   • twitch開台通知要發在哪個頻道
     用法: `a269 svr_conf set twitch_noti_chan <#頻道>'
 
@@ -165,22 +168,22 @@ Copyright (C) 2022 CToID
     用來新增想要的回應，如果關鍵字已存在則修改該關鍵字的回應表符。
 
   • 刪除回覆(del)
-    用法: `a269 reply del <觸發關鍵字>'
+    用法: `a269 react del <觸發關鍵字>'
 
     用來刪除在資料庫中的回應。
 
   • 尋找關鍵字(findk)
-    用法: `a269 reply findk <回應表符>'
+    用法: `a269 react findk <回應表符>'
 
     用回應來反查關鍵字。
 
   • 尋找回覆(findv)
-    用法: `a269 reply findv <觸發關鍵字>'
+    用法: `a269 react findv <觸發關鍵字>'
 
     用關鍵字來找回應。
 
   • 列出所有關鍵字列表(list)
-    用法: `a269 reply list'
+    用法: `a269 react list'
     &
 
 
