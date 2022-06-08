@@ -160,7 +160,7 @@ git clone https://github.com/funk443/bot_269.git
 
 3. 點選註冊您的應用程式，並輸入名稱，選擇分類。OAuth重新導向網址請填 =http://localhost=
 
-4. 到剛剛註冊的應用程式頁面，按下新密碼按鈕。並分別將用戶端ID和用戶端密碼複製到bot_269目錄下twitch.json中
+4. 到剛剛註冊的應用程式頁面，按下新密碼按鈕。並分別將用戶端ID和用戶端密碼複製到bot_269目錄下twitch.json中，
    ID複製到key後面的雙引號，密碼複製到secret後面的雙引號內
 
 ** 啟動你的機器人吧
