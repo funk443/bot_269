@@ -29,6 +29,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   - [[#下載檔案][下載檔案]]
   - [[#設定環境][設定環境]]
   - [[#設定discord開發者環境和金鑰][設定Discord開發者環境和金鑰]]
+  - [[#啟動你的機器人吧][啟動你的機器人吧]]
 
 * 主要功能
 *(對我用白色主題，不然你想怎樣)*
@@ -143,3 +144,25 @@ git clone https://github.com/funk443/bot_269.git
    [[./images/dc_app_bot_intent.png]]
 
 3. 按下Reset Token按鈕，並將他給你的金鑰複製到bot_269目錄下的TOKEN檔案中的雙引號之間
+
+*** 將機器人邀請進你的伺服器裡
+1. 點選在應用程式頁面左側選單中OAuth2下的URL Generator，並勾選如圖權限:
+   [[./images/dc_app_url.png]]
+
+2. 複製所產出網址就是邀請機器人的網址了
+
+** 啟動你的機器人吧
+1. 打開你的終端機/命令提示字元(cmd)，並cd到bot_269的目錄中
+
+2. 輸入以下指令:
+   - GNU/Linux
+     #+begin_src shell
+     $ python bot.py
+     #+end_src
+
+   - Microsoft Windows
+     #+begin_src shell
+     py bot.py
+     #+end_src
+
+3. 完成，記得不可以關閉終端機/命令提示字元(cmd)的視窗!
