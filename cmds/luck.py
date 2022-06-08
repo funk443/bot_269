@@ -22,11 +22,11 @@ options = ("大吉", "吉", "小吉", "平", "小凶", "凶", "大凶", "你命�
 class luck (cog_ext):
   @commands.command ()
   async def 今日運勢 (self, ctx):
-    f = open ("./datas/luck.json", "r")
+    f = open ("./datas/luck.json", "r", encoding = "utf-8")
     last_time = json.load (f)
     f.close ()
 
-    f = open ("./datas/luck.json", "w")
+    f = open ("./datas/luck.json", "w", encoding = "utf-8")
     if (str (ctx.author.id) not in last_time):
       today_luck = random.choice (options)
       await ctx.reply (today_luck)

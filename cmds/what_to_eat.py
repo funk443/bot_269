@@ -21,11 +21,11 @@ class what_to_eat (cog_ext):
   async def 吃什麼 (self, ctx, *option):
     option = list (option)
     if (f"data_food_{ctx.guild.id}.json" not in os.listdir ("./datas/food")):
-      f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "w")
+      f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "w", encoding = "utf-8")
       json.dump ({"food":[]}, f)
       f.close ()
 
-    f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "r")
+    f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "r", encoding = "utf-8")
     food = json.load (f)
     f.close ()
 
@@ -33,7 +33,7 @@ class what_to_eat (cog_ext):
       if (len (option) == 1):
         await ctx.send ("你沒說要加什麼R")
       else:
-        f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "w")
+        f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "w", encoding = "utf-8")
         
         for i in option[1:]:
           food["food"].append (i)
@@ -44,7 +44,7 @@ class what_to_eat (cog_ext):
       if (len (option) == 1):
         await ctx.send ("你沒說要移除什麼R")
       else:
-        f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "w")
+        f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "w", encoding = "utf-8")
         for i in option[1:]:
           if (i not in food["food"]):
             await ctx.send (f"先生，沒有{i}")
@@ -53,7 +53,7 @@ class what_to_eat (cog_ext):
         json.dump (food, f)
         f.close ()
     elif ("clr" in option):
-      f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "w")
+      f = open (f"./datas/food/data_food_{ctx.guild.id}.json", "w", encoding = "utf-8")
       json.dump ({"food":[]}, f)
       f.close ()
     elif ("list" in option):

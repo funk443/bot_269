@@ -18,15 +18,15 @@ intents = discord.Intents.default ()
 intents.members = True
 activity = discord.Game (name = "GNU Emacs")
 
-f = open ("./TOKEN", "r")
+f = open ("./TOKEN", "r", encoding = "utf-8")
 TOKEN = f.read ()
 f.close ()
 
-f = open ("config.json", "r")
+f = open ("config.json", "r", encoding = "utf-8")
 conf = json.load (f)
 f.close ()
 
-f = open ("prefixes.json", "r")
+f = open ("prefixes.json", "r", encoding = "utf-8")
 pfs = json.load (f)
 f.close ()
 # print (twitch_names)
@@ -56,7 +56,7 @@ async def change_prefix (ctx, npf = None):
     pfs[str (ctx.guild.id)] = "a269 "
     await ctx.send ("沒給我東西那我就把他改回預設的了")
 
-  f = open ("prefixes.json", "w")
+  f = open ("prefixes.json", "w", encoding = "utf-8")
   json.dump (pfs, f)
   f.close ()
 

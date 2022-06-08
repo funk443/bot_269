@@ -20,11 +20,11 @@ class reply (cog_ext):
   @commands.command ()
   async def reply (self, ctx, key, content_1 = None, content_2 = None):
     if (f"data_reply_{ctx.guild.id}.json" not in os.listdir ("./datas/reply")):
-      f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "w")
+      f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "w", encoding = "utf-8")
       json.dump ({}, f)
       f.close ()
 
-    f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "r")
+    f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "r", encoding = "utf-8")
     data = json.load (f)
     f.close ()
 
@@ -32,7 +32,7 @@ class reply (cog_ext):
       if (content_1 == None):
         await ctx.send ("你是要我加什麼啦")
       elif (len (ctx.message.attachments) != 0):
-        f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "w")
+        f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "w", encoding = "utf-8")
         urls = []
         for i in ctx.message.attachments:
           urls.append (i.url)
@@ -44,7 +44,7 @@ class reply (cog_ext):
       elif (content_2 == None):
         await ctx.send ("你是要我加什麼啦")
       else:
-        f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "w")
+        f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "w", encoding = "utf-8")
         data[str (content_1)] = str (content_2)
         json.dump (data, f)
         f.close ()
@@ -56,7 +56,7 @@ class reply (cog_ext):
         await ctx.send ("你沒給我東西我是要刪什麼啦")
       else:
         if (content_1 in data):
-          f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "w")
+          f = open (f"./datas/reply/data_reply_{ctx.guild.id}.json", "w", encoding = "utf-8")
           data.pop (content_1)
           json.dump (data, f)
           f.close ()

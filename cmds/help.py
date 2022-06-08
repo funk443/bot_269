@@ -18,7 +18,7 @@ from discord.ext import commands
 class help_commands (cog_ext):
   @commands.command ()
   async def help (self, ctx, cate = None):
-    f = open ("./resources/help.txt", "r")
+    f = open ("./resources/help.txt", "r", encoding = "utf-8")
     f_res = f.read ().split ("&")
       
 

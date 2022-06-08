@@ -15,7 +15,7 @@ import json
 from discord.ext import commands, tasks
 from twitchAPI.twitch import Twitch
 
-f = open ("twitch.json", "r")
+f = open ("twitch.json", "r", encoding = "utf-8")
 tch = json.load (f)
 f.close ()
 twitch = Twitch(tch["key"], tch["secret"])
@@ -29,7 +29,7 @@ files_list = os.listdir ("datas/config/server")
 files_list.remove ("a")
 files_list.remove ("default.json")
 for i in files_list:
-  f = open (f"datas/config/server/{i}", "r")
+  f = open (f"datas/config/server/{i}", "r", encoding = "utf-8")
   svr_conf = json.load (f)
   f.close ()
   stat = []

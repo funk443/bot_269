@@ -16,7 +16,7 @@ import os
 from discord.ext import commands
 from core.classes import cog_ext
 
-js = open ("config.json")
+js = open ("config.json", encoding = "utf-8")
 conf = json.load (js)
 js.close ()
 
@@ -37,7 +37,7 @@ class events (cog_ext):
       return
 
     if ("PREFIX" == message.content):
-      f = open ("prefixes.json", "r")
+      f = open ("prefixes.json", "r", encoding = "utf-8")
       pf = json.load (f)
       f.close ()
 
@@ -56,13 +56,13 @@ class events (cog_ext):
       await message.channel.send (file = discord.File ("./resources/LICENSE.txt"))
 
     if ("COPYRIGHT" == message.content):
-      f = open ("./resources/license_notice", "r")
+      f = open ("./resources/license_notice", "r", encoding = "utf-8")
       lic = f.read ()
       f.close ()
       await message.channel.send (f"```{lic}```")
 
     if ("CREDIT" == message.content):
-      f = open ("credits.txt", "r")
+      f = open ("credits.txt", "r", encoding = "utf-8")
       credit = f.read ()
       f.close ()
 
@@ -73,20 +73,20 @@ class events (cog_ext):
       await message.reply ("閉嘴好不好")
 
     if (f"data_reply_{message.guild.id}.json" not in os.listdir ("./datas/reply")):
-      f = open (f"./datas/data_reply_{message.guild.id}.json", "w")
+      f = open (f"./datas/data_reply_{message.guild.id}.json", "w", encoding = "utf-8")
       json.dump ({}, f)
       f.close ()
 
     if (f"data_react_{message.guild.id}.json" not in os.listdir ("./datas/react")):
-      f = open (f"./datas/data_react_{message.guild.id}.json", "w")
+      f = open (f"./datas/data_react_{message.guild.id}.json", "w", encoding = "utf-8")
       json.dump ({}, f)
       f.close ()
 
-    f = open (f"./datas/reply/data_reply_{message.guild.id}.json")
+    f = open (f"./datas/reply/data_reply_{message.guild.id}.json", encoding = "utf-8")
     data = json.load (f)
     f.close ()
 
-    f = open (f"./datas/react/data_react_{message.guild.id}.json", "r")
+    f = open (f"./datas/react/data_react_{message.guild.id}.json", "r", encoding = "utf-8")
     reacts = json.load (f)
     f.close ()
 
@@ -102,7 +102,7 @@ class events (cog_ext):
         await message.add_reaction (i)
 
     if ("linux" in message.content.lower ().split ()):
-      f = open (conf["GNULinux"])
+      f = open (conf["GNULinux"], encoding = "utf-8")
       await message.channel.send (f"```{f.read ()}```")
       f.close ()
   

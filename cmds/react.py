@@ -20,11 +20,11 @@ class reaction (cog_ext):
   @commands.command ()
   async def react (self, ctx, key, content_1 = None, *content_2):
     if (f"data_react_{ctx.guild.id}.json" not in os.listdir ("./datas/react")):
-      f = open (f"./datas/react/data_react_{ctx.guild.id}.json", "w")
+      f = open (f"./datas/react/data_react_{ctx.guild.id}.json", "w", encoding = "utf-8")
       json.dump ({}, f)
       f.close ()
 
-    f = open (f"./datas/react/data_react_{ctx.guild.id}.json", "r")
+    f = open (f"./datas/react/data_react_{ctx.guild.id}.json", "r", encoding = "utf-8")
     reacts = json.load (f)
     f.close ()
 
@@ -32,7 +32,7 @@ class reaction (cog_ext):
       if ((content_1 == None) or (len (content_2) == 0)):
         await ctx.send ("你沒給我東西我要怎麼加")
       else:
-        f = open (f"./datas/react/data_react_{ctx.guild.id}.json", "w")
+        f = open (f"./datas/react/data_react_{ctx.guild.id}.json", "w", encoding = "utf-8")
         reacts[content_1] = content_2
         json.dump (reacts, f)
         f.close ()
@@ -44,7 +44,7 @@ class reaction (cog_ext):
       elif (content_1 not in reacts):
         await ctx.send (f"先生，這裡沒有{content_1}")
       else:
-        f = open (f"./datas/react/data_react_{ctx.guild.id}.json", "w")
+        f = open (f"./datas/react/data_react_{ctx.guild.id}.json", "w", encoding = "utf-8")
         reacts.pop(content_1)
         json.dump (reacts, f)
         f.close ()

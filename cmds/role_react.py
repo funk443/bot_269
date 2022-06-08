@@ -19,19 +19,19 @@ class role_react (cog_ext):
   @commands.command ()
   async def role_select (self, ctx, contents, *emojis):
     if (f"svr_conf_{ctx.guild.id}.json" not in os.listdir ("./datas/config/server")):
-      f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "w")
-      f2 = open (f"./datas/config/server/default.json", "r")
+      f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "w", encoding = "utf-8")
+      f2 = open (f"./datas/config/server/default.json", "r", encoding = "utf-8")
       default = json.load (f2)
       f2.close ()
       json.dump (default, f)
       f.close ()
 
     if (f"role_select_{ctx.guild.id}.json" not in os.listdir ("./datas/role_select")):
-      f = open (f"./datas/role_select/role_select_{ctx.guild.id}.json", "w")
+      f = open (f"./datas/role_select/role_select_{ctx.guild.id}.json", "w", encoding = "utf-8")
       json.dump ({}, f)
       f.close ()
 
-    f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "r")
+    f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "r", encoding = "utf-8")
     conf = json.load (f)
     f.close ()
 
@@ -39,7 +39,7 @@ class role_react (cog_ext):
       await ctx.message.delete ()
       return
 
-    f = open (f"./datas/role_select/role_select_{ctx.guild.id}.json", "r")
+    f = open (f"./datas/role_select/role_select_{ctx.guild.id}.json", "r", encoding = "utf-8")
     msgs = json.load (f)
     f.close ()
 
@@ -66,7 +66,7 @@ class role_react (cog_ext):
 
     # print (msgs)
 
-    f = open (f"./datas/role_select/role_select_{ctx.guild.id}.json", "w")
+    f = open (f"./datas/role_select/role_select_{ctx.guild.id}.json", "w", encoding = "utf-8")
     json.dump (msgs, f)
     f.close ()
 
@@ -78,7 +78,7 @@ class role_react (cog_ext):
     if (payload.member.bot == True):
       return
 
-    f = open (f"./datas/role_select/role_select_{payload.guild_id}.json", "r")
+    f = open (f"./datas/role_select/role_select_{payload.guild_id}.json", "r", encoding = "utf-8")
     msgs = json.load (f)
     f.close ()
 

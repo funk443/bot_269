@@ -21,23 +21,23 @@ class configs (go_live):
   @commands.command ()
   async def usr_conf (self, ctx):
     if (f"usr_conf_{ctx.author.id}.json" not in os.listdir("./datas/config/user")):
-      f = open (f"./datas/config/user/usr_conf_{ctx.author.id}.json", "w")
+      f = open (f"./datas/config/user/usr_conf_{ctx.author.id}.json", "w", encoding = "utf-8")
       json.dump ({}, f)
       f.close ()
     return
 
   @commands.command ()
   async def svr_conf (self, ctx, key = None, option = None, ans = None):
-    f = open (f"./datas/config/server/default.json", "r")
+    f = open (f"./datas/config/server/default.json", "r", encoding = "utf-8")
     default = json.load (f)
     f.close ()
 
     if (f"svr_conf_{ctx.guild.id}.json" not in os.listdir("./datas/config/server")):
-      f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "w")
+      f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "w", encoding = "utf-8")
       json.dump (json.load (default), f)
       f.close ()
 
-    f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "r")
+    f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "r", encoding = "utf-8")
     confs = json.load (f)
     f.close ()
 
@@ -99,7 +99,7 @@ class configs (go_live):
       else:
         return
 
-      f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "w")
+      f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "w", encoding = "utf-8")
       json.dump (confs, f)
       f.close ()
 
@@ -112,7 +112,7 @@ class configs (go_live):
       files_list.remove ("a")
       files_list.remove ("default.json")
       for i in files_list:
-        f = open (f"datas/config/server/{i}", "r")
+        f = open (f"datas/config/server/{i}", "r", encoding = "utf-8")
         svr_conf = json.load (f)
         f.close ()
         stat = []
