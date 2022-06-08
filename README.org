@@ -77,27 +77,27 @@ git clone https://github.com/funk443/bot_269.git
    這裡只以我用過的兩個發行版為例，其他發行版如何安裝請自行google
    - Arch GNU/Linux
      #+begin_src shell
-     sudo pacman -S python 
+     $ sudo pacman -S python 
      #+end_src
 
    - Void GNU/Linux
      #+begin_src shell
-     sudo xbps-install -S python
+     $ sudo xbps-install -S python
      #+end_src
 
 2. 打開你的終端機，cd到bot_269目錄
    #+begin_src shell
-   cd bot_269/
+   $ cd bot_269/
    #+end_src
 
 3. 幫python安裝pip
    #+begin_src shell
-   python -m ensurepip --upgrade
+   $ python -m ensurepip --upgrade
    #+end_src
 
 4. 安裝所需要的python函式庫
    #+begin_src shell
-   python -m pip install -r modules.txt
+   $ python -m pip install -r modules.txt
    #+end_src
 
 *** Microsoft Windows
@@ -108,16 +108,16 @@ git clone https://github.com/funk443/bot_269.git
 
 3. 打開命令提示字元(cmd)，並輸入以下指令
    #+begin_src shell
-   py -m ensurepip --upgrade
+   C:\ py -m ensurepip --upgrade
    #+end_src
 
 4. cd到你bot_269的資料夾(假設你剛剛解壓縮到D槽)
    #+begin_src shell
-   D:
-   cd bot_269
+   C:\ D:
+   D:\ cd bot_269
    #+end_src
 
 5. 安裝所需要的python函式庫
    #+begin_src shell
-   py -m pip install -r modules.txt
+   D:\bot_269 py -m pip install -r modules.txt
    #+end_src
