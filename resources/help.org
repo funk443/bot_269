@@ -1,7 +1,7 @@
 #+TITLE: bot_269使用說明
 #+AUTHOR: CToID(269)
 #+OPTIONS: \n:t
-#+SETUPFILES:https://fniessen.github.io/org-html-themes/org/theme-readthrorg.setup
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 *預設前綴為a269, 某些伺服器可能有修改過前綴，可以使用( ~PREFIX~ )來查詢。*
 *說明書中有and符號請忽略，這些是用來做分隔之用，指令中不會有這些符號。*
