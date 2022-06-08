@@ -25,29 +25,99 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   - [[#今日運勢][今日運勢]]
   - [[#twitch開台通知][Twitch開台通知]]
   - [[#自動給成員身份組][自動給成員身份組]]
+- [[#如何在自己的電腦上主持自己的bot_269][如何在自己的電腦上主持自己的bot_269]]
+  - [[#下載檔案][下載檔案]]
+  - [[#設定環境][設定環境]]
 
 * 主要功能
-(對我用白色主題，不然你想怎樣)
+*(對我用白色主題，不然你想怎樣)*
 ** 回覆指定的訊息內容
-你可以設定特定的訊息內容讓bot_269來回覆。
+你可以設定特定的訊息內容讓269來回覆。
 [[./images/reply.gif]]
 
 ** 為指定的訊息內容加入回應
-你也可以設定讓bot_269對指定訊息加上回應。
+你也可以設定讓269對指定訊息加上回應。
 [[./images/react.gif]]
 
 ** 幫你決定要吃什麼
-想不到要吃什麼嗎？Bot_269幫你決定。
+想不到要吃什麼嗎？269幫你決定。
 [[./images/eat.gif]]
 
 ** 今日運勢
-想知道今天會不會過的順利嗎？Bot_269告訴你。
+想知道今天會不會過的順利嗎？269告訴你。
 [[./images/luck.gif]]
 
 ** Twitch開台通知
-讓Bot_269在你最愛的實況主開台的時候通知你。
+讓269在你最愛的實況主開台的時候通知你。
 [[./images/twitch.gif]]
 
 ** 自動給成員身份組
 伺服器成員可以通過按下回應的表情符號來取得特定身份組。
 [[./images/role.gif]]
+
+* 如何在自己的電腦上主持自己的bot_269
+你可以使用這個程式在自己的電腦上主持bot_269，但會需要一些步驟。
+
+** 下載檔案
+*** 使用git
+#+begin_src shell
+git clone https://github.com/funk443/bot_269.git
+#+end_src
+
+*** 直接下載zip檔
+如果你不會使用git，可以選擇此方法。
+1. 點擊github頁面上的Code按鈕，然後按"Download ZIP"
+   [[./images/download.png]]
+
+2. 將zip解壓縮。
+
+** 設定環境
+*** GNU/Linux
+1. 透過你的套件管理員安裝python
+   這裡只以我用過的兩個發行版為例，其他發行版如何安裝請自行google
+   - Arch GNU/Linux
+     #+begin_src shell
+     sudo pacman -S python 
+     #+end_src
+
+   - Void GNU/Linux
+     #+begin_src shell
+     sudo xbps-install -S python
+     #+end_src
+
+2. 打開你的終端機，cd到bot_269目錄
+   #+begin_src shell
+   cd bot_269/
+   #+end_src
+
+3. 幫python安裝pip
+   #+begin_src shell
+   python -m ensurepip --upgrade
+   #+end_src
+
+4. 安裝所需要的python函式庫
+   #+begin_src shell
+   python -m pip install -r modules.txt
+   #+end_src
+
+*** Microsoft Windows
+(因為我沒用過Windows，所以指令部份可能會打錯，如有錯誤請自行google或連絡我)
+1. 到[[https://www.python.org/downloads/][Python官網下載頁面]]下載最新版python，至少為python 3.10
+
+2. 走完安裝程式的安裝步驟
+
+3. 打開命令提示字元(cmd)，並輸入以下指令
+   #+begin_src shell
+   py -m ensurepip --upgrade
+   #+end_src
+
+4. cd到你bot_269的資料夾(假設你剛剛解壓縮到D槽)
+   #+begin_src shell
+   D:
+   cd bot_269
+   #+end_src
+
+5. 安裝所需要的python函式庫
+   #+begin_src shell
+   py -m pip install -r modules.txt
+   #+end_src
