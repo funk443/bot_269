@@ -25,9 +25,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   - [[#今日運勢][今日運勢]]
   - [[#twitch開台通知][Twitch開台通知]]
   - [[#自動給成員身份組][自動給成員身份組]]
-- [[#如何在自己的電腦上主持自己的bot_269][如何在自己的電腦上主持自己的bot_269]]
+- [[#如何在自己的電腦上透過bot_269主持自己的discord機器人][如何在自己的電腦上透過bot_269主持自己的Discord機器人]]
   - [[#下載檔案][下載檔案]]
   - [[#設定環境][設定環境]]
+  - [[#設定discord開發者環境和金鑰][設定Discord開發者環境和金鑰]]
 
 * 主要功能
 *(對我用白色主題，不然你想怎樣)*
@@ -55,8 +56,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 伺服器成員可以通過按下回應的表情符號來取得特定身份組。
 [[./images/role.gif]]
 
-* 如何在自己的電腦上主持自己的bot_269
-你可以使用這個程式在自己的電腦上主持bot_269，但會需要一些步驟。
+* 如何在自己的電腦上透過bot_269主持自己的Discord機器人
+你可以使用bot_269在自己的電腦上主持一個DC機器人
 
 ** 下載檔案
 *** 使用git
@@ -108,16 +109,37 @@ git clone https://github.com/funk443/bot_269.git
 
 3. 打開命令提示字元(cmd)，並輸入以下指令
    #+begin_src shell
-   C:\ py -m ensurepip --upgrade
+   py -m ensurepip --upgrade
    #+end_src
 
 4. cd到你bot_269的資料夾(假設你剛剛解壓縮到D槽)
    #+begin_src shell
-   C:\ D:
-   D:\ cd bot_269
+   D:
+   cd bot_269
    #+end_src
 
 5. 安裝所需要的python函式庫
    #+begin_src shell
-   D:\bot_269 py -m pip install -r modules.txt
+   py -m pip install -r modules.txt
    #+end_src
+
+** 設定Discord開發者環境和金鑰
+*** 創建一個新的應用程式
+1. 到[[https://discord.com/developers/applications][Discord開發者頁面]]，並依畫面指示登入自己的Discord帳號
+
+2. 確定自己在Application分頁，然後點選右上的New Application，並依指示輸入名字後創建
+   [[./images/dc_app.png]]
+
+*** 創建一個新的bot
+1. 接著點選剛剛創建的應用程式頁面左側選單中的bot，並點選Add bot
+   [[./images/dc_app_bot.png]]
+
+2. 在bot的頁面中填入你想要的機器人名字和設定個人資料圖片，並確保:
+   - Public Bot
+   - Presence Intent
+   - Server Members Intent
+   - Message Content Intent
+   是向右開啟狀態
+   [[./images/dc_app_bot_intent.png]]
+
+3. 按下Reset Token按鈕，並將他給你的金鑰複製到bot_269目錄下的TOKEN檔案中的雙引號之間
