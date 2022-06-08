@@ -27,6 +27,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   - [[#自動給成員身份組][自動給成員身份組]]
 
 * 主要功能
+(對我用白色主題，不然你想怎樣)
 ** 回覆指定的訊息內容
 你可以設定特定的訊息內容讓bot_269來回覆。
 [[./images/reply.gif]]
