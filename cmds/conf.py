@@ -49,7 +49,7 @@ class configs (go_live):
         await ctx.send (f"`{confs}`")
       elif ((key == "clr") and (option == "twitch_name")):
         confs[option] = []
-      elif ((option == None) or (option not in conf) or (ans == None)):
+      elif ((option == None) or (option not in confs) or (ans == None)):
         await ctx.send ("你好像打錯什麼了")
       elif ((key == "add") and (option == "admin") and (ans not in confs["admin"])):
         flag = False
@@ -94,7 +94,10 @@ class configs (go_live):
         elif (option == "twitch_noti_chan"):
           confs[option] = ans[2:-1]
         else:
-          confs[option] = ans
+          if (ans == "true"):
+            confs[option] = True
+          else:
+            confs[option] = False
       else:
         return
 
