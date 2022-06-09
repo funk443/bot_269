@@ -46,8 +46,8 @@ Copyright (C) 2022 CToID
 
   • 幫助目錄
     用法: `a269 help'
-
     召喚說明書的目錄。
+
 
   • 詳細說明
     用法: `a269 help <目錄中的數字(1, 2, 3等)>'
@@ -59,8 +59,8 @@ Copyright (C) 2022 CToID
 
   • 查詢目前前綴字(PREFIX)
     用法: `PREFIX'
-
     如題，只要輸入 `PREFIX' 就好了，不用加任何前綴字。
+
 
   • 更改前綴字(change_prefix)
     用法: `a269 change_prefix <要改成什麼前綴字>'
@@ -88,10 +88,12 @@ Copyright (C) 2022 CToID
   • 管理員是否能再增加/刪除管理員
     用法: `a269 svr_conf set allow_add_by_admin true/false'
 
+  • 是否充許非管理員新增回覆或是回應
+    用法: `a269 svr_conf set allow_set_by_non_admin true/false'
+
   • 要跟隨的twitch id
     用法: `a269 svr_conf set twitch_name <Twitch帳號1>,<twitch帳號
     2>,<twitch帳號3>,...'
-
     機器人會在這些人開台的時候傳送通知道指定頻道。
 
   • 清除twitch id清單
@@ -99,17 +101,14 @@ Copyright (C) 2022 CToID
 
   • twitch開台通知要發在哪個頻道
     用法: `a269 svr_conf set twitch_noti_chan <#頻道>'
-
     指定開台通知傳送的頻道，沒有設定這項不會發通知。
 
   • twitch開台通知內容
     用法: `a269 svr_conf set twitch_noti_text "<內容>"'
-
     傳送通知的內容，機器人會自動在訊息的最後加上頻道網址。
 
   • twitch開台通知是否要用discord嵌入訊息
     用法: `a269 svr_conf set twitch_embed true/false'
-
     &
 
 
@@ -120,7 +119,6 @@ Copyright (C) 2022 CToID
 
   用法: `a269 role_select "<訊息內容>" "<表情符號1>/<@身份組1>, <@身份組
   2>, ...." "<表情符號2>/<@身份組1>, <@身份組2>, ..." ...'
-
   *雙引號(")跟斜線(/)都要記得照上面的格式輸入*
   在訊息內容的雙引號內，可以用shift+enter換行，也可以使用表符。
   在哪個頻道輸入這個指令，他訊息就會傳到那個頻道。
@@ -133,25 +131,25 @@ Copyright (C) 2022 CToID
   • 新增/修改回覆(add)
     用法1: `a269 reply add <觸發關鍵字> <回覆內容>'
     用法2: `a269 reply add <觸發關鍵字>'
-
     用來新增想要的回覆，如果關鍵字已存在則修改該關鍵字的回覆內容。
     如果回覆內容或關鍵字有含空格，應以雙引號(")包起來。
     用法2可以附加多張圖片來讓機器人回覆圖片。
 
+
   • 刪除回覆(del)
     用法: `a269 reply del <觸發關鍵字>'
-
     用來刪除在資料庫中的回覆。
+
 
   • 尋找關鍵字(findk)
     用法: `a269 reply findk <回覆內容>'
-
     用回覆來反查關鍵字。
+
 
   • 尋找回覆(findv)
     用法: `a269 reply findv <觸發關鍵字>'
-
     用關鍵字來找回覆。
+
 
   • 列出所有關鍵字列表(list)
     用法: `a269 reply list'
@@ -164,23 +162,23 @@ Copyright (C) 2022 CToID
   • 新增/修改回應(add)
     用法: `a269 react add <觸發關鍵字> <要回應的表符1> <要回應的表符
     2>...(表符間可以用空格格開，也可以不用)'
-
     用來新增想要的回應，如果關鍵字已存在則修改該關鍵字的回應表符。
+
 
   • 刪除回覆(del)
     用法: `a269 react del <觸發關鍵字>'
-
     用來刪除在資料庫中的回應。
+
 
   • 尋找關鍵字(findk)
     用法: `a269 react findk <回應表符>'
-
     用回應來反查關鍵字。
+
 
   • 尋找回覆(findv)
     用法: `a269 react findv <觸發關鍵字>'
-
     用關鍵字來找回應。
+
 
   • 列出所有關鍵字列表(list)
     用法: `a269 react list'
@@ -193,17 +191,22 @@ Copyright (C) 2022 CToID
   • 從預設清單中挑食物
   用法: `a269 吃什麼'
 
+
   • 新增食物到預設清單(add)
   用法: `a269 吃什麼 add <食物1> <食物2>....(食物間以空白隔開)'
+
 
   • 將食物從預設清單中移除(del)
   用法: `a269 吃什麼 del <食物1> <食物2>....(食物間以空白隔開)'
 
+
   • 將預設清單清空(clr)
   用法: `a269 吃什麼 clr'
 
+
   • 查看預設清單(list)
   用法: `a269 吃什麼 list'
+
 
   • 不使用預設清單挑選食物
   用法: `a269 吃什麼 <食物1> <食物2>....(食物間以空白隔開)'

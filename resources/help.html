@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-06-09 Thu 01:21 -->
+<!-- 2022-06-09 Thu 23:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>bot_269使用說明</title>
@@ -23,14 +23,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org69719f7">1. 幫助指令(help)</a></li>
-<li><a href="#org7566f78">2. 前綴字(prefix)</a></li>
-<li><a href="#org72aab63">3. 伺服器設定用指令(svr_conf)</a></li>
-<li><a href="#org56a7027">4. 按表情符號來取得身份組指令(role_select)</a></li>
-<li><a href="#org06e2700">5. 回覆指令(reply)</a></li>
-<li><a href="#orge1c08b5">6. 回應指令(react)</a></li>
-<li><a href="#orgc032529">7. 吃什麼指令</a></li>
-<li><a href="#org5030d15">8. 今日運勢指令</a></li>
+<li><a href="#org4cf8f34">1. 幫助指令(help)</a></li>
+<li><a href="#orgd434e41">2. 前綴字(prefix)</a></li>
+<li><a href="#org8a0d231">3. 伺服器設定用指令(svr_conf)</a></li>
+<li><a href="#org40f65c1">4. 按表情符號來取得身份組指令(role_select)</a></li>
+<li><a href="#orge655c98">5. 回覆指令(reply)</a></li>
+<li><a href="#orgff3d66b">6. 回應指令(react)</a></li>
+<li><a href="#org309524f">7. 吃什麼指令</a></li>
+<li><a href="#org6bd8f25">8. 今日運勢指令</a></li>
 </ul>
 </div>
 </div>
@@ -72,38 +72,34 @@ Copyright (C) 2022 CToID<br />
 </p>
 
 
-<div id="outline-container-org69719f7" class="outline-2">
-<h2 id="org69719f7"><span class="section-number-2">1.</span> 幫助指令(help)</h2>
+<div id="outline-container-org4cf8f34" class="outline-2">
+<h2 id="org4cf8f34"><span class="section-number-2">1.</span> 幫助指令(help)</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
-<li><p>
-幫助目錄<br />
+<li>幫助目錄<br />
 用法: <code>a269 help</code><br />
-</p>
+召喚說明書的目錄。<br /></li>
+</ul>
 
-<p>
-召喚說明書的目錄。<br />
-</p></li>
 
+<ul class="org-ul">
 <li>詳細說明<br />
 用法: <code>a269 help &lt;目錄中的數字(1, 2, 3等)&gt;</code><br />
 &amp;<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7566f78" class="outline-2">
-<h2 id="org7566f78"><span class="section-number-2">2.</span> 前綴字(prefix)</h2>
+<div id="outline-container-orgd434e41" class="outline-2">
+<h2 id="orgd434e41"><span class="section-number-2">2.</span> 前綴字(prefix)</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
-<li><p>
-查詢目前前綴字(PREFIX)<br />
+<li>查詢目前前綴字(PREFIX)<br />
 用法: <code>PREFIX</code><br />
-</p>
+如題，只要輸入 <code>PREFIX</code> 就好了，不用加任何前綴字。<br /></li>
+</ul>
 
-<p>
-如題，只要輸入 <code>PREFIX</code> 就好了，不用加任何前綴字。<br />
-</p></li>
 
+<ul class="org-ul">
 <li>更改前綴字(change_prefix)<br />
 用法: <code>a269 change_prefix &lt;要改成什麼前綴字&gt;</code><br />
 可以將機器人在這個伺服器的前綴字更改成你想要的字串。<br />
@@ -114,8 +110,8 @@ Copyright (C) 2022 CToID<br />
 </ul>
 </div>
 </div>
-<div id="outline-container-org72aab63" class="outline-2">
-<h2 id="org72aab63"><span class="section-number-2">3.</span> 伺服器設定用指令(svr_conf)</h2>
+<div id="outline-container-org8a0d231" class="outline-2">
+<h2 id="org8a0d231"><span class="section-number-2">3.</span> 伺服器設定用指令(svr_conf)</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 <b>只有伺服器擁有者或管理員可用</b><br />
@@ -134,49 +130,32 @@ Copyright (C) 2022 CToID<br />
 <li>管理員是否能再增加/刪除管理員<br />
 用法: <code>a269 svr_conf set allow_add_by_admin true/false</code><br /></li>
 
-<li><p>
-要跟隨的twitch id<br />
-用法: <code>a269 svr_conf set twitch_name &lt;Twitch帳號1&gt;,&lt;twitch帳號2&gt;,&lt;twitch帳號3&gt;,...</code><br />
-</p>
+<li>是否充許非管理員新增回覆或是回應<br />
+用法: <code>a269 svr_conf set allow_set_by_non_admin true/false</code> <br /></li>
 
-<p>
-機器人會在這些人開台的時候傳送通知道指定頻道。<br />
-</p></li>
+<li>要跟隨的twitch id<br />
+用法: <code>a269 svr_conf set twitch_name &lt;Twitch帳號1&gt;,&lt;twitch帳號2&gt;,&lt;twitch帳號3&gt;,...</code><br />
+機器人會在這些人開台的時候傳送通知道指定頻道。<br /></li>
 
 <li>清除twitch id清單<br />
 用法: <code>a269 svr_conf clr twitch_name</code><br /></li>
 
-<li><p>
-twitch開台通知要發在哪個頻道<br />
+<li>twitch開台通知要發在哪個頻道<br />
 用法: <code>a269 svr_conf set twitch_noti_chan &lt;#頻道&gt;</code><br />
-</p>
+指定開台通知傳送的頻道，沒有設定這項不會發通知。<br /></li>
 
-<p>
-指定開台通知傳送的頻道，沒有設定這項不會發通知。<br />
-</p></li>
-
-<li><p>
-twitch開台通知內容<br />
+<li>twitch開台通知內容<br />
 用法: <code>a269 svr_conf set twitch_noti_text "&lt;內容&gt;"</code><br />
-</p>
+傳送通知的內容，機器人會自動在訊息的最後加上頻道網址。<br /></li>
 
-<p>
-傳送通知的內容，機器人會自動在訊息的最後加上頻道網址。<br />
-</p></li>
-
-<li><p>
-twitch開台通知是否要用discord嵌入訊息<br />
+<li>twitch開台通知是否要用discord嵌入訊息<br />
 用法: <code>a269 svr_conf set twitch_embed true/false</code><br />
-</p>
-
-<p>
-&amp;<br />
-</p></li>
+&amp;<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org56a7027" class="outline-2">
-<h2 id="org56a7027"><span class="section-number-2">4.</span> 按表情符號來取得身份組指令(role_select)</h2>
+<div id="outline-container-org40f65c1" class="outline-2">
+<h2 id="org40f65c1"><span class="section-number-2">4.</span> 按表情符號來取得身份組指令(role_select)</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 <b>只有伺服器擁有者或管理員可用</b><br />
@@ -184,9 +163,6 @@ twitch開台通知是否要用discord嵌入訊息<br />
 
 <p>
 用法: <code>a269 role_select "&lt;訊息內容&gt;" "&lt;表情符號1&gt;/&lt;@身份組1&gt;, &lt;@身份組2&gt;, ...." "&lt;表情符號2&gt;/&lt;@身份組1&gt;, &lt;@身份組2&gt;, ..." ...</code><br />
-</p>
-
-<p>
 <b>雙引號(")跟斜線(/)都要記得照上面的格式輸入</b><br />
 在訊息內容的雙引號內，可以用shift+enter換行，也可以使用表符。<br />
 在哪個頻道輸入這個指令，他訊息就會傳到那個頻道。<br />
@@ -194,103 +170,87 @@ twitch開台通知是否要用discord嵌入訊息<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org06e2700" class="outline-2">
-<h2 id="org06e2700"><span class="section-number-2">5.</span> 回覆指令(reply)</h2>
+<div id="outline-container-orge655c98" class="outline-2">
+<h2 id="orge655c98"><span class="section-number-2">5.</span> 回覆指令(reply)</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
-<li><p>
-新增/修改回覆(add)<br />
+<li>新增/修改回覆(add)<br />
 用法1: <code>a269 reply add &lt;觸發關鍵字&gt; &lt;回覆內容&gt;</code><br />
 用法2: <code>a269 reply add &lt;觸發關鍵字&gt;</code><br />
-</p>
-
-<p>
 用來新增想要的回覆，如果關鍵字已存在則修改該關鍵字的回覆內容。<br />
 如果回覆內容或關鍵字有含空格，應以雙引號(")包起來。<br />
-用法2可以附加多張圖片來讓機器人回覆圖片。<br />
-</p></li>
+用法2可以附加多張圖片來讓機器人回覆圖片。<br /></li>
+</ul>
 
-<li><p>
-刪除回覆(del)<br />
+
+<ul class="org-ul">
+<li>刪除回覆(del)<br />
 用法: <code>a269 reply del &lt;觸發關鍵字&gt;</code> <br />
-</p>
+用來刪除在資料庫中的回覆。<br /></li>
+</ul>
 
-<p>
-用來刪除在資料庫中的回覆。<br />
-</p></li>
 
-<li><p>
-尋找關鍵字(findk)<br />
+<ul class="org-ul">
+<li>尋找關鍵字(findk)<br />
 用法: <code>a269 reply findk &lt;回覆內容&gt;</code> <br />
-</p>
+用回覆來反查關鍵字。<br /></li>
+</ul>
 
-<p>
-用回覆來反查關鍵字。<br />
-</p></li>
 
-<li><p>
-尋找回覆(findv)<br />
+<ul class="org-ul">
+<li>尋找回覆(findv)<br />
 用法: <code>a269 reply findv &lt;觸發關鍵字&gt;</code> <br />
-</p>
+用關鍵字來找回覆。<br /></li>
+</ul>
 
-<p>
-用關鍵字來找回覆。<br />
-</p></li>
 
+<ul class="org-ul">
 <li>列出所有關鍵字列表(list)<br />
 用法: <code>a269 reply list</code>  <br />
 &amp;<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge1c08b5" class="outline-2">
-<h2 id="orge1c08b5"><span class="section-number-2">6.</span> 回應指令(react)</h2>
+<div id="outline-container-orgff3d66b" class="outline-2">
+<h2 id="orgff3d66b"><span class="section-number-2">6.</span> 回應指令(react)</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
-<li><p>
-新增/修改回應(add)<br />
+<li>新增/修改回應(add)<br />
 用法: <code>a269 react add &lt;觸發關鍵字&gt; &lt;要回應的表符1&gt; &lt;要回應的表符2&gt;...(表符間可以用空格格開，也可以不用)</code><br />
-</p>
+用來新增想要的回應，如果關鍵字已存在則修改該關鍵字的回應表符。<br /></li>
+</ul>
 
-<p>
-用來新增想要的回應，如果關鍵字已存在則修改該關鍵字的回應表符。<br />
-</p></li>
 
-<li><p>
-刪除回覆(del)<br />
+<ul class="org-ul">
+<li>刪除回覆(del)<br />
 用法: <code>a269 react del &lt;觸發關鍵字&gt;</code> <br />
-</p>
+用來刪除在資料庫中的回應。<br /></li>
+</ul>
 
-<p>
-用來刪除在資料庫中的回應。<br />
-</p></li>
 
-<li><p>
-尋找關鍵字(findk)<br />
+<ul class="org-ul">
+<li>尋找關鍵字(findk)<br />
 用法: <code>a269 react findk &lt;回應表符&gt;</code> <br />
-</p>
+用回應來反查關鍵字。<br /></li>
+</ul>
 
-<p>
-用回應來反查關鍵字。<br />
-</p></li>
 
-<li><p>
-尋找回覆(findv)<br />
+<ul class="org-ul">
+<li>尋找回覆(findv)<br />
 用法: <code>a269 react findv &lt;觸發關鍵字&gt;</code> <br />
-</p>
+用關鍵字來找回應。<br /></li>
+</ul>
 
-<p>
-用關鍵字來找回應。<br />
-</p></li>
 
+<ul class="org-ul">
 <li>列出所有關鍵字列表(list)<br />
 用法: <code>a269 react list</code>  <br />
 &amp;<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc032529" class="outline-2">
-<h2 id="orgc032529"><span class="section-number-2">7.</span> 吃什麼指令</h2>
+<div id="outline-container-org309524f" class="outline-2">
+<h2 id="org309524f"><span class="section-number-2">7.</span> 吃什麼指令</h2>
 <div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li>從預設清單中挑食物<br /></li>
@@ -299,12 +259,14 @@ twitch開台通知是否要用discord嵌入訊息<br />
 用法: <code>a269 吃什麼</code> <br />
 </p>
 
+
 <ul class="org-ul">
 <li>新增食物到預設清單(add)<br /></li>
 </ul>
 <p>
 用法: <code>a269 吃什麼 add &lt;食物1&gt; &lt;食物2&gt;....(食物間以空白隔開)</code> <br />
 </p>
+
 
 <ul class="org-ul">
 <li>將食物從預設清單中移除(del)<br /></li>
@@ -313,6 +275,7 @@ twitch開台通知是否要用discord嵌入訊息<br />
 用法: <code>a269 吃什麼 del &lt;食物1&gt; &lt;食物2&gt;....(食物間以空白隔開)</code><br />
 </p>
 
+
 <ul class="org-ul">
 <li>將預設清單清空(clr)<br /></li>
 </ul>
@@ -320,12 +283,14 @@ twitch開台通知是否要用discord嵌入訊息<br />
 用法: <code>a269 吃什麼 clr</code><br />
 </p>
 
+
 <ul class="org-ul">
 <li>查看預設清單(list)<br /></li>
 </ul>
 <p>
 用法: <code>a269 吃什麼 list</code><br />
 </p>
+
 
 <ul class="org-ul">
 <li>不使用預設清單挑選食物<br /></li>
@@ -336,8 +301,8 @@ twitch開台通知是否要用discord嵌入訊息<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org5030d15" class="outline-2">
-<h2 id="org5030d15"><span class="section-number-2">8.</span> 今日運勢指令</h2>
+<div id="outline-container-org6bd8f25" class="outline-2">
+<h2 id="org6bd8f25"><span class="section-number-2">8.</span> 今日運勢指令</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 用法: <code>a269 今日運勢</code><br />
@@ -353,7 +318,7 @@ twitch開台通知是否要用discord嵌入訊息<br />
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: CToID(269)</p>
-<p class="date">Created: 2022-06-09 Thu 01:21</p>
+<p class="date">Created: 2022-06-09 Thu 23:01</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
