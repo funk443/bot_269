@@ -28,6 +28,15 @@ class reply (cog_ext):
     data = json.load (f)
     f.close ()
 
+    f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "r", encoding = "utf-8")
+    conf = json.load (f)
+    allowed = conf["allow_set_by_non_admin"]
+    f.close ()
+
+    if ((not allowed) and (key in ["add", "del"])):
+      await ctx.send ("你不能動這個喔")
+      return
+
     if (key == "add"):
       if (content_1 == None):
         await ctx.send ("你是要我加什麼啦")

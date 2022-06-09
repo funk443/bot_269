@@ -51,7 +51,7 @@ class configs (go_live):
         confs[option] = []
       elif ((option == None) or (ans == None)):
         await ctx.send ("你好像打錯什麼了")
-      elif ((key == "+") and (option == "admin") and (ans not in confs["admin"])):
+      elif ((key == "add") and (option == "admin") and (ans not in confs["admin"])):
         flag = False
         for i in ctx.guild.members:
           if (ans == f"<@{i.id}>"):
@@ -66,7 +66,7 @@ class configs (go_live):
           await ctx.send ("你好像不能動這個設定欸")
         else:
           confs["admin"].append (ans)
-      elif ((key == "-") and (option == "admin") and (ans in confs["admin"])):
+      elif ((key == "del") and (option == "admin") and (ans in confs["admin"])):
         flag = False
         for i in ctx.guild.members:
           if (ans == f"<@{i.id}>"):
@@ -86,8 +86,8 @@ class configs (go_live):
           await ctx.send ("這個不是用set啦")
           return
 
-        if (((option == "twitch_embed") or (option == "allow_add_by_admin")) and (ans not in ["true", "false"])):
-          await ctx.send ("你大概打錯什麼東西了")
+        if ((option in ["twitch_embed", "allow_add_by_admin", "allow_set_by_non_admin"]) and (ans not in ["true", "false"])):
+          await ctx.send ("這應該是只能用true或false啦")
         elif (option == "twitch_name"):
           ans = ans.split (",")
 

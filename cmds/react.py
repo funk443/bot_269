@@ -28,6 +28,15 @@ class reaction (cog_ext):
     reacts = json.load (f)
     f.close ()
 
+    f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "r", encoding = "utf-8")
+    conf = json.load (f)
+    allowed = conf["allow_set_by_non_admin"]
+    f.close ()
+
+    if ((not allowed) and (key in ["add", "del"])):
+      await ctx.send ("你不能動這個喔")
+      return
+
     if (key == "add"):
       if ((content_1 == None) or (len (content_2) == 0)):
         await ctx.send ("你沒給我東西我要怎麼加")
