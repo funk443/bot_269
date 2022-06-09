@@ -30,10 +30,11 @@ class reply (cog_ext):
 
     f = open (f"./datas/config/server/svr_conf_{ctx.guild.id}.json", "r", encoding = "utf-8")
     conf = json.load (f)
+    admin = conf["admin"]
     allowed = conf["allow_set_by_non_admin"]
     f.close ()
 
-    if ((not allowed) and (key in ["add", "del"])):
+    if ((not allowed) and (key in ["add", "del"]) and ((f"<@{ctx.author}>" not in admin) or (ctx.author != ctx.guild.owner)):
       await ctx.send ("你不能動這個喔")
       return
 
