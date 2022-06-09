@@ -1,1 +1,1 @@
-{"admin":[], "allow_add_by_admin":false, "twitch_name":[], "twitch_noti_chan":"", "twitch_noti_text":"開台了", "twitch_embed":true}
+{"admin":[], "allow_add_by_admin":false, "allow_set_by_non_admin":true, "twitch_name":[], "twitch_noti_chan":"", "twitch_noti_text":"開台了", "twitch_embed":true}
