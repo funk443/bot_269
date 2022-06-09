@@ -34,7 +34,7 @@ class reply (cog_ext):
     allowed = conf["allow_set_by_non_admin"]
     f.close ()
 
-    if ((not allowed) and (key in ["add", "del"]) and ((f"<@{ctx.author}>" not in admin) or (ctx.author != ctx.guild.owner)):
+    if ((not allowed) and (key in ["add", "del"]) and ((f"<@{ctx.author}>" not in admin) or (ctx.author != ctx.guild.owner))):
       await ctx.send ("你不能動這個喔")
       return
 
