@@ -147,7 +147,7 @@ git clone https://github.com/funk443/bot_269.git
    是向右開啟狀態
    [[./images/dc_app_bot_intent.png]]
 
-3. 按下Reset Token按鈕，並將他給你的金鑰複製到bot_269目錄下的TOKEN檔案中的雙引號之間
+3. 按下Reset Token按鈕，並將他給你的金鑰複製到bot_269目錄下的TOKEN檔案中。
 
 *** 將機器人邀請進你的伺服器裡
 1. 點選在應用程式頁面左側選單中OAuth2下的URL Generator，並勾選如圖權限:
