@@ -33,7 +33,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   - [[#設定discord開發者環境和金鑰][設定Discord開發者環境和金鑰]]
   - [[#設定twitch應用程式][設定twitch應用程式]]
   - [[#啟動你的機器人吧][啟動你的機器人吧]]
-- [[#連絡方式][連絡方式]]
+- [[#使用說明和連絡方式][使用說明和連絡方式]]
 
 * 主要功能
 *(對我用白色主題，不然你想怎樣)*
@@ -181,7 +181,8 @@ git clone https://github.com/funk443/bot_269.git
 
 3. 完成， *記得不可以關閉終端機/命令提示字元(cmd)的視窗!*
 
-* 連絡方式
+* 使用說明和連絡方式
+bot_269的說明可以在[[https://ctoid.synology.me/help.html][這裡]]找到。
 如果有任何問題歡迎連絡我
 
 - Discord: ID#2120
