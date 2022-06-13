@@ -67,7 +67,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ** 下載檔案
 *** 使用git
 #+begin_src shell
-git clone https://github.com/funk443/bot_269.git
+$ git clone https://github.com/funk443/bot_269.git
 #+end_src
 
 *** 直接下載zip檔
@@ -83,27 +83,27 @@ git clone https://github.com/funk443/bot_269.git
    這裡只以我用過的兩個發行版為例，其他發行版如何安裝請自行google
    - Arch GNU/Linux
      #+begin_src shell
-     sudo pacman -S python 
+     $ sudo pacman -S python 
      #+end_src
 
    - Void GNU/Linux
      #+begin_src shell
-     sudo xbps-install -S python
+     $ sudo xbps-install -S python
      #+end_src
 
 2. 打開你的終端機，cd到bot_269目錄
    #+begin_src shell
-   cd bot_269/
+   $ cd bot_269/
    #+end_src
 
 3. 幫python安裝pip
    #+begin_src shell
-   python -m ensurepip --upgrade
+   $ python -m ensurepip --upgrade
    #+end_src
 
 4. 安裝所需要的python函式庫
    #+begin_src shell
-   python -m pip install -r modules.txt
+   $ python -m pip install -r modules.txt
    #+end_src
 
 *** Microsoft Windows
@@ -171,7 +171,7 @@ git clone https://github.com/funk443/bot_269.git
 2. 輸入以下指令:
    - GNU/Linux
      #+begin_src shell
-     python bot.py
+     $ python bot.py
      #+end_src
 
    - Microsoft Windows
